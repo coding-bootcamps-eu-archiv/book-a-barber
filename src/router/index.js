@@ -1,35 +1,35 @@
 import { createRouter, createWebHistory } from "vue-router";
-import PageForSearchLocations from "@/views/PageForSearchLocations.vue";
-import PageForOurServices from "@/views/PageForOurServices.vue";
-import PageForCalender from "@/views/PageForCalender.vue";
-import PageForPayment from "@/views/PageForPayment.vue";
-import PageForConfirm from "@/views/PageForConfirm.vue";
+import Home from "@/views/Home.vue";
+import Services from "@/views/Services.vue";
+import Appoinments from "@/views/Appoinments.vue";
+import Payment from "@/views/Payment.vue";
+import Confirm from "@/views/Confirm.vue";
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: PageForSearchLocations,
+    name: "Home",
+    component: Home,
   },
   {
-    path: "/PageForOurServices",
-    name: "PageForOurServices",
-    component: PageForOurServices,
+    path: "/Services",
+    name: "Services",
+    component: Services,
   },
   {
-    path: "/PageForCalender",
-    name: "PageForCalender",
-    component: PageForCalender,
+    path: "/Appoinments",
+    name: "Appoinments",
+    component: Appoinments,
   },
   {
-    path: "/PageForPayment",
-    name: "PageForPayment",
-    component: PageForPayment,
+    path: "/Payment",
+    name: "Payment",
+    component: Payment,
   },
   {
-    path: "/PageForConfirm",
-    name: "PageForConfirm",
-    component: PageForConfirm,
+    path: "/Confirm",
+    name: "Confirm",
+    component: Confirm,
   },
 ];
 

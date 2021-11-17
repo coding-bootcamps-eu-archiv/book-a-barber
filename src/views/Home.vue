@@ -23,7 +23,7 @@
 }
 .first-page {
   color: white;
-  width: 1000px;
-  height: 600px;
+  width: 100%;
+  height: 400px;
 }
 </style>

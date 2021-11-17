@@ -1,6 +1,7 @@
 <template>
   <header></header>
-  <nav><router-link to="/">Home</router-link></nav>
+  <router-link to="/">Home</router-link>
+
   <router-view />
 
   <footer></footer>

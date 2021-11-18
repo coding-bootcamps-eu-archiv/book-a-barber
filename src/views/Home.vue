@@ -1,4 +1,5 @@
 <template>
+  <PlzHannover v-for="plz in plz" v-bind="plz" :key="plz" />
   <div class="primary-feature">
     <article class="first-page">
       <br />
@@ -6,10 +7,31 @@
       <label for="PLZ"></label>
       <input placeholder="PLZ" type="text" id="PLZ" />
 
-      <router-link to="/Services"> <button>Search</button></router-link>
+      <router-link to="/Services">
+        <button @click="findPlz()">Search</button></router-link
+      >
     </article>
   </div>
 </template>
+
+<script>
+import PlzHannover from "@/components/PlzHannover.js";
+
+export default {
+  name: "Home",
+  components: {
+    PlzHannover,
+  },
+
+  methods: {
+    findPlz() {
+      if (PlzHannover === true) {
+        this.$router.push("/Services");
+      }
+    },
+  },
+};
+</script>
 
 <style>
 .primary-feature {

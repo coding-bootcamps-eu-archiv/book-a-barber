@@ -1,15 +1,20 @@
 <template>
-  <PlzHannover v-for="plz in plz" v-bind="plz" :key="plz" />
+  <PlzHannover v-for="plz in plzs" v-bind="plz" :key="plz" />
   <div class="primary-feature">
     <article class="first-page">
       <br />
       <h1>Do you need me? <br />Tell me where</h1>
       <label for="PLZ"></label>
-      <input placeholder="PLZ" type="text" id="PLZ" />
+      <input
+        placeholder="PLZ"
+        type="number"
+        id="PLZ"
+        v-model="postcode"
+        @keypress.enter="findPlz()"
+      />
 
-      <router-link to="/Services">
-        <button @click="findPlz()">Search</button></router-link
-      >
+      <router-link to="/Services"> </router-link
+      ><button @click="findPlz()">Search</button>
     </article>
   </div>
 </template>
@@ -19,14 +24,21 @@ import PlzHannover from "@/components/PlzHannover.js";
 
 export default {
   name: "Home",
-  components: {
-    PlzHannover,
+  data() {
+    return {
+      postcode: "",
+    };
   },
 
   methods: {
     findPlz() {
-      if (PlzHannover === true) {
+      console.log(PlzHannover);
+      console.log(this.postcode);
+
+      if (PlzHannover.includes(this.postcode)) {
         this.$router.push("/Services");
+      } else {
+        alert("Sorry, this is not Hannover");
       }
     },
   },

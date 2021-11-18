@@ -2,7 +2,7 @@
   <div class="primary-feature">
     <article class="first-page">
       <br />
-      <h1>Do you need me? Tell me where</h1>
+      <h1>Do you need me? <br />Tell me where</h1>
       <label for="PLZ"></label>
       <input placeholder="PLZ" type="text" id="PLZ" />
 
@@ -17,10 +17,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
-  max-width: 50rem;
-  height: 30rem;
+  max-width: 70vw;
+  height: 50vw;
 }
 .first-page {
+  justify-content: center;
+  align-items: center;
   color: white;
 }
 </style>

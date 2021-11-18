@@ -1,0 +1,16 @@
+{
+  "appointments": [
+    {
+      "day": "Montag",
+      "time": "08:00"
+    },
+    {
+      "day": "Montag",
+      "time": "09:00"
+    },
+    {
+      "day": "Dienstag",
+      "time": "09:00"
+    }
+  ]
+}

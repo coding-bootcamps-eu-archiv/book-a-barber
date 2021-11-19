@@ -28,6 +28,10 @@ export default {
 
 <style>
 html {
+<<<<<<< HEAD
+=======
+  font-family: "Courier New", Courier, monospace;
+>>>>>>> cde8949bf7904a0b6fd4b27db1629deb1cf1c2f3
 }
 
 .button-next-page {

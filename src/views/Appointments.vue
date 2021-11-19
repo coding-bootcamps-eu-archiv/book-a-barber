@@ -27,6 +27,9 @@ export default {
 </script>
 
 <style>
+html {
+}
+
 .button-next-page {
   position: absolute;
   bottom: 2rem;

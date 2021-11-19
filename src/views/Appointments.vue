@@ -27,6 +27,10 @@ export default {
 </script>
 
 <style>
+html {
+  font-family: "Courier New", Courier, monospace;
+}
+
 .button-next-page {
   position: absolute;
   bottom: 2rem;

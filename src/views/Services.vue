@@ -4,23 +4,15 @@
   </article>
 
   <main class="services-layout">
-    <article class="shipping-layout" v-for="service in services" :key="service">
-      <aside class="shipping-stamp">Flying Barber</aside>
-      <section class="goods-info">
-        <figure>
-          <img :src="require(`../images/${service.avatar}.jpeg`)" />
-        </figure>
-      </section>
-      <section class="description">
-        <h2>{{ service.title }}</h2>
-        <p>{{ service.description }}</p>
-      </section>
-      <section class="box-shopping">
-        <label class="price">Preis: €{{ service.price }}</label>
-        <label class="duration">Dauer: {{ service.duration }}</label>
-        <button class="adding">Hinzufügen</button>
-      </section>
-    </article>
+    <ServiceItem
+      v-for="service in barberServices"
+      :key="service"
+      :title="service.title"
+      :description="service.description"
+      :duration="service.duration"
+      :price="service.price"
+      :avatar="service.avatar"
+    />
   </main>
   <router-link class="button" to="/Appointments"
     >Up to looking for a Termin</router-link
@@ -28,46 +20,12 @@
 </template>
 
 <script>
+import ServiceItem from "@/components/ServiceItem.vue";
+import data from "@/components/data.json";
 export default {
+  components: { ServiceItem },
   data: () => ({
-    services: [
-      {
-        id: 1,
-        title: "Haircut",
-        avatar: "pic-hair",
-        description:
-          "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
-        duration: "20min",
-        price: "35",
-      },
-      {
-        id: 2,
-        title: "Barber",
-        avatar: "pic-barber",
-        description:
-          "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
-        duration: "20min",
-        price: "40",
-      },
-      {
-        id: 3,
-        title: "All in One",
-        avatar: "pic-all-in-one",
-        description:
-          "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
-        duration: "45min",
-        price: "65",
-      },
-      {
-        id: 4,
-        title: "Tell my Name",
-        avatar: "pic-all-in-one",
-        description:
-          "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
-        duration: "45min",
-        price: "65",
-      },
-    ],
+    barberServices: data,
   }),
 };
 </script>
@@ -85,7 +43,7 @@ body {
   --border-color: black;
   --body-background-color: darkgoldenrod;
   --card-background-color: blanchedalmond;
-  --buying-area-bg-color: snow;
+  --buying-area-bg-color: white;
 }
 /* "Header" with Sticky-Styling */
 .page-services {
@@ -110,58 +68,70 @@ body {
   margin: 0;
   background-color: var(--body-background-color);
 }
-@media screen and (min-width: 800px) {
-  .services-layout {
-    justify-content: space-around;
-    flex-direction: row;
-    flex-flow: wrap;
-  }
-}
 
 .shipping-layout {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   background-color: var(--card-background-color);
   width: 50vw;
   border-radius: 1rem;
   margin: 1.5rem;
 }
+@media screen and (min-width: 800px) {
+  .services-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .shipping-layout {
+    width: 30;
+  }
+}
+.img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48vw;
+  height: 48vw;
+}
+.frame-image {
+  position: relative;
+  margin: 0;
+}
 
 .shipping-stamp {
   font-size: 0.75rem;
-  position: relative;
+  position: absolute;
   background-color: var(--buying-area-bg-color);
   border-radius: 0.2rem;
   opacity: 0.5;
   width: 12ch;
   padding: 0.2rem 0.2rem 0.2rem 0.2rem;
-  top: 3rem;
-  left: 35vw;
+  top: 1rem;
+  right: 1rem;
 }
 figure {
   display: flex;
   justify-content: center;
 }
 img {
-  width: 48vw;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
+  object-fit: fill;
   display: block;
   border-radius: 0.5rem;
 }
-&::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, #ffffff 3%, #ffffff00 50%);
+@media screen and (min-width: 800px) {
+  img {
+    width: 30vw;
+    height: 30vw;
+  }
 }
 
 .description {
   padding: 0 1rem;
-
   text-align: left;
 }
 .box-shopping {
@@ -171,17 +141,20 @@ img {
   height: 8vh;
   display: grid;
   grid-template-areas:
-    "price button"
-    "duration button";
+    "price btn-buy"
+    "duration btn-buy";
 }
 .price {
   grid-area: price;
+  background-color: blue;
 }
 .duration {
   grid-area: duration;
+  background-color: yellow;
 }
-.adding-buy {
-  grid-area: button;
-  padding: 2rem;
+.adding {
+  grid-area: btn-buy;
+
+  background-color: red;
 }
 </style>

@@ -52,6 +52,7 @@ body {
   opacity: 0.75;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 /* Button to the next episode */
 .button {
@@ -85,7 +86,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
   }
   .shipping-layout {
-    width: 30;
+    width: 30vw;
   }
 }
 .img-wrapper {

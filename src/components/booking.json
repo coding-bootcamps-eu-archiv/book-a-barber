@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "service": {
+        "name": "Haircut",
+        "duration": "20",
+        "price": "30"
+      },
+      "date": {
+        "day": "",
+        "time": ""
+      },
+      "adress": {
+        "name": "",
+        "street": "",
+        "plz": "",
+        "city": ""
+      },
+      "payment": {
+        "method": "",
+        "sum": ""
+      }
+    }
+  ]
+}

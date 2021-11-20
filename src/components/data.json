@@ -25,8 +25,16 @@
   },
   {
     "id": 4,
-    "title": "All in One",
-    "avatar": "pic-all-in-one",
+    "title": "Acqua di Parma",
+    "avatar": "pic-acqua",
+    "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
+    "duration": "45min",
+    "price": "65"
+  },
+  {
+    "id": 5,
+    "title": "Old Lumbermill's",
+    "avatar": "pic-pumbermills",
     "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
     "duration": "45min",
     "price": "65"

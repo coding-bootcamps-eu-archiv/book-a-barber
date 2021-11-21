@@ -58,7 +58,9 @@
             <th>ZUSAMMENFASSUNG</th>
           </tr>
         </table>
-        <p>{{ data }}</p>
+        <p v-for="bookingdata in bookingdatas.data" :key="bookingdata">
+          {{ bookingdata.service.name }} {{ bookingdata.payment.sum }}
+        </p>
       </section>
     </article>
     <hr />

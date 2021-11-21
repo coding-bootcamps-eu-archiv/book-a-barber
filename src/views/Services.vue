@@ -28,6 +28,8 @@ export default {
     barberServices: data,
   }),
 };
+/*Methode() {
+let totalPrice = {{ bookindata.payment.sum }} + 19% */
 </script>
 
 <style>

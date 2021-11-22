@@ -1,26 +1,42 @@
 [
   {
     "id": 1,
-    "title": "Haircut",
-    "avatar": "img/xxxxx.jpg",
+    "title": "Haircut123",
+    "avatar": "pic-hair",
     "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
     "duration": "20min",
-    "price": "40"
+    "price": "35"
   },
   {
     "id": 2,
-    "title": "",
-    "avatar": "img/xxxxx.jpg",
+    "title": "Barber",
+    "avatar": "pic-barber",
     "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
     "duration": "20min",
     "price": "40"
   },
   {
     "id": 3,
-    "title": "Haircut",
-    "avatar": "img/xxxxx.jpg",
+    "title": "All in One",
+    "avatar": "pic-all-in-one",
     "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
-    "duration": "20min",
-    "price": "40"
+    "duration": "45min",
+    "price": "65"
+  },
+  {
+    "id": 4,
+    "title": "Acqua di Parma",
+    "avatar": "pic-acqua",
+    "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
+    "duration": "45min",
+    "price": "65"
+  },
+  {
+    "id": 5,
+    "title": "Old Lumbermill's",
+    "avatar": "pic-pumbermills",
+    "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
+    "duration": "45min",
+    "price": "65"
   }
 ]

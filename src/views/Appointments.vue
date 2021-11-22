@@ -2,7 +2,44 @@
   <section>
     <article>
       <h1>Termin auswählen</h1>
-      <p>{{ appointments }}</p>
+      <!-- Monday -->
+      <table>
+        <tr>
+          <th class="days">Montag</th>
+        </tr>
+        <tr v-for="appointment in appointments.appointments" :key="appointment">
+          <td v-if="appointment.day === 'Montag'">{{ appointment.time }}</td>
+        </tr>
+      </table>
+      <!-- Tuesday -->
+      <table>
+        <tr>
+          <th class="days">Dienstag</th>
+        </tr>
+        <tr v-for="appointment in appointments.appointments" :key="appointment">
+          <td v-if="appointment.day === 'Dienstag'">{{ appointment.time }}</td>
+        </tr>
+      </table>
+      <!-- Wednesday -->
+      <table>
+        <tr>
+          <th class="days">Mittwoch</th>
+        </tr>
+        <tr v-for="appointment in appointments.appointments" :key="appointment">
+          <td v-if="appointment.day === 'Mittwoch'">{{ appointment.time }}</td>
+        </tr>
+      </table>
+      <!-- Thursday -->
+      <table>
+        <tr>
+          <th class="days">Donnerstag</th>
+        </tr>
+        <tr v-for="appointment in appointments.appointments" :key="appointment">
+          <td v-if="appointment.day === 'Donnerstag'">
+            {{ appointment.time }}
+          </td>
+        </tr>
+      </table>
       <router-link to="/Payment"
         ><button class="button-next-page">
           Auswahl bestätigen
@@ -13,15 +50,13 @@
 </template>
 
 <script>
-import appointments from "@/components/appointments.json";
+import timeSlots from "@/components/appointments.json";
+
 export default {
   data() {
     return {
-      appointments: appointments,
+      appointments: timeSlots,
     };
-  },
-  async created() {
-    console.log(this.appointments);
   },
 };
 </script>
@@ -39,15 +74,14 @@ html {
   bottom: 2rem;
 }
 
-.days {
-  list-style: none;
-  display: flexbox;
+table {
+  border-collapse: separate;
+  border-spacing: 0.4rem;
+  height: 14%;
+  width: 14%;
 }
 
 .appointments {
   list-style: none;
-  display: grid;
-  grid-template-columns: 14% 14% 14% 14%;
-  grid-template-rows: auto;
 }
 </style>

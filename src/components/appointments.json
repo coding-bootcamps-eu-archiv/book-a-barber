@@ -11,6 +11,30 @@
     {
       "day": "Dienstag",
       "time": "09:00"
+    },
+    {
+      "day": "Mittwoch",
+      "time": "17:00"
+    },
+    {
+      "day": "Donnerstag",
+      "time": "14.00"
+    },
+    {
+      "day": "Donnerstag",
+      "time": "13:00"
+    },
+    {
+      "day": "Freitag",
+      "time": "10:00"
+    },
+    {
+      "day": "Samstag",
+      "time": "11:00"
+    },
+    {
+      "day": "Samstag",
+      "time": "12:00"
     }
   ]
 }

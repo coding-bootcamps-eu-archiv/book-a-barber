@@ -58,8 +58,9 @@
             <th>ZUSAMMENFASSUNG</th>
           </tr>
         </table>
-        <p v-for="bookingdata in bookingdatas.data" :key="bookingdata">
-          {{ bookingdata.service.name }} {{ bookingdata.payment.sum }}
+        <p>
+          {{ bookingdatas.data.service.name }}
+          {{ bookingdatas.data.payment.sum }}
         </p>
       </section>
     </article>
@@ -69,15 +70,14 @@
 </template>
 
 <script>
-import data from "@/components/booking.json";
+import bookings from "@/components/booking.json";
 export default {
   data() {
     return {
-      bookingdatas: data,
+      bookingdatas: bookings,
     };
   },
 };
-console.log(data);
 </script>
 
 <style>

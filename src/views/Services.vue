@@ -149,7 +149,7 @@ img {
   display: block;
   border-radius: 0.5rem;
 }
-&::after {
+/* ::after {
   content: "";
   position: absolute;
   top: 0;
@@ -157,7 +157,7 @@ img {
   width: 100%;
   height: 100%;
   background: linear-gradient(0deg, #ffffff 3%, #ffffff00 50%);
-}
+} */
 
 .description {
   padding: 0 1rem;

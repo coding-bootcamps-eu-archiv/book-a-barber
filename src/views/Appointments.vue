@@ -40,6 +40,39 @@
           </td>
         </tr>
       </table>
+      <!-- Friday -->
+      <table>
+        <tr>
+          <th class="days">Freitag</th>
+        </tr>
+        <tr v-for="appointment in appointments.appointments" :key="appointment">
+          <td v-if="appointment.day === 'Freitag'">
+            {{ appointment.time }}
+          </td>
+        </tr>
+      </table>
+      <!-- Saturday -->
+      <table>
+        <tr>
+          <th class="days">Samstag</th>
+        </tr>
+        <tr v-for="appointment in appointments.appointments" :key="appointment">
+          <td v-if="appointment.day === 'Samstag'">
+            {{ appointment.time }}
+          </td>
+        </tr>
+      </table>
+      <!-- Sunday -->
+      <table>
+        <tr>
+          <th class="days">Sonntag</th>
+        </tr>
+        <tr v-for="appointment in appointments.appointments" :key="appointment">
+          <td v-if="appointment.day === 'Sonntag'">
+            {{ appointment.time }}
+          </td>
+        </tr>
+      </table>
       <router-link to="/Payment"
         ><button class="button-next-page">
           Auswahl bestätigen

@@ -1,15 +1,49 @@
 <template>
+  <PlzHannover v-for="plz in plzs" v-bind="plz" :key="plz" />
   <div class="primary-feature">
     <article class="first-page">
       <br />
-      <h1>Do you need me? Tell me where</h1>
+      <h1>Do you need me? <br />Tell me where</h1>
       <label for="PLZ"></label>
-      <input placeholder="PLZ" type="text" id="PLZ" />
+      <input
+        placeholder="PLZ"
+        type="number"
+        id="PLZ"
+        v-model="postcode"
+        @keypress.enter="findPlz()"
+      />
 
-      <router-link to="/Services"> <button>Search</button></router-link>
+      <router-link to="/Services"> </router-link
+      ><button @click="findPlz()">Search</button>
     </article>
   </div>
 </template>
+
+<script>
+import PlzHannover from "@/components/PlzHannover.js";
+
+export default {
+  name: "Home",
+  data() {
+    return {
+      postcode: "",
+    };
+  },
+
+  methods: {
+    findPlz() {
+      console.log(PlzHannover);
+      console.log(this.postcode);
+
+      if (PlzHannover.includes(this.postcode)) {
+        this.$router.push("/Services");
+      } else {
+        alert("Sorry, this is not Hannover");
+      }
+    },
+  },
+};
+</script>
 
 <style>
 .primary-feature {
@@ -17,10 +51,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
-  max-width: 50rem;
-  height: 30rem;
+  max-width: 70vw;
+  height: 50vw;
 }
 .first-page {
+  justify-content: center;
+  align-items: center;
   color: white;
 }
 </style>

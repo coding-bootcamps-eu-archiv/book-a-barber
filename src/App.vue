@@ -1,12 +1,23 @@
 <template>
-  <header></header>
-
+  <header class="nav-leiste">
+    <nav><router-link to="/">Home</router-link></nav>
+    <nav><router-link to="/Services">Services</router-link></nav>
+    <nav><router-link to="/Appointments">Appointments</router-link></nav>
+    <nav><router-link to="/Payment">Payment</router-link></nav>
+  </header>
   <router-view />
 
-  <footer></footer>
+  <footer>©Enricco Carruba</footer>
 </template>
 
 <style>
+.nav-leiste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(189, 135, 97);
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,6 +36,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: rgb(252, 231, 215);
 }
 </style>

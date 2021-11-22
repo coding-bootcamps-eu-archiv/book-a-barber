@@ -1,30 +1,41 @@
 <template>
   <h1 class="thanks-text">Thanks for the Booking ✅</h1>
-  <section class="confirm-text"></section>
 
   <h2>Bestellübersicht</h2>
   <article class="order">
     <section class="data-customer">
       <h3>Kunde:</h3>
-      <p>Vorname:</p>
-      <p>Nachname:</p>
-      <p>E-Mail:</p>
-      <p>Strasse, HsNr.:</p>
-      <p>PLZ:</p>
-      <p>Stadt:</p>
-      <p>Handy:</p>
+      <!--<p>Vorname: {{ data.adress.surname }}</p>-->
+      <p>Vorname: {{ bookingdatas.data.adress.surname }}</p>
+      <p>Nachname: {{ bookingdatas.data.adress.lastname }}</p>
+      <p>E-Mail: {{ bookingdatas.data.adress.email }}</p>
+      <p>Strasse, HsNr.: {{ bookingdatas.data.adress.street }}</p>
+      <p>PLZ: {{ bookingdatas.data.adress.plz }}</p>
+      <p>Stadt: {{ bookingdatas.data.adress.city }}</p>
+      <p>Handy: {{ bookingdatas.data.adress.phone }}</p>
     </section>
     <section class="data-payment">
       <h3>Datum:</h3>
-      <p>Tag:</p>
-      <p>Uhrzeit:</p>
+      <p>Tag: {{ bookingdatas.data.date.day }}</p>
+      <p>Uhrzeit: {{ bookingdatas.data.date.time }}</p>
       <h3>Bezahlung:</h3>
-      <p>Methode:</p>
-      <p>Summe:</p>
+      <p>Methode: {{ bookingdatas.data.payment.method }}</p>
+      <p>Summe: {{ bookingdatas.data.payment.sum }}</p>
     </section>
   </article>
   <router-link to="/">Back to Start</router-link>
 </template>
+
+<script>
+import bookings from "@/components/booking.json";
+export default {
+  data() {
+    return {
+      bookingdatas: bookings,
+    };
+  },
+};
+</script>
 
 <style>
 .thanks-text {

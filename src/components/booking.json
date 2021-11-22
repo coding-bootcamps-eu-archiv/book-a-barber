@@ -1,28 +1,26 @@
 {
-  "data": [
-    {
-      "service": {
-        "name": "Haircut",
-        "duration": "20",
-        "price": "30"
-      },
-      "date": {
-        "day": "26.11.2021",
-        "time": "15:00"
-      },
-      "adress": {
-        "surname": "Diego",
-        "lastname": "Maradona",
-        "email": "diego@gmail.com",
-        "street": "Diego 1",
-        "plz": "00001",
-        "city": "B Aires",
-        "phone": "+12342345423"
-      },
-      "payment": {
-        "method": "Cash",
-        "sum": "50"
-      }
+  "data": {
+    "service": {
+      "name": "Haircut",
+      "duration": "20",
+      "price": "30"
+    },
+    "date": {
+      "day": "26.11.2021",
+      "time": "15:00"
+    },
+    "adress": {
+      "surname": "Diego",
+      "lastname": "Maradona",
+      "email": "diego@gmail.com",
+      "street": "Diego 1",
+      "plz": "00001",
+      "city": "B Aires",
+      "phone": "+12342345423"
+    },
+    "payment": {
+      "method": "Cash",
+      "sum": "200"
     }
-  ]
+  }
 }

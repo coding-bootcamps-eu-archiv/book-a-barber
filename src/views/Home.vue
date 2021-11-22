@@ -47,16 +47,17 @@ export default {
 
 <style>
 .primary-feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url("https://baerte.info/wp-content/uploads/2019/06/barber.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
-  max-width: 70vw;
-  height: 50vw;
+  min-width: 70vw;
+  min-height: 60vw;
 }
 .first-page {
-  justify-content: center;
-  align-items: center;
   color: white;
 }
 </style>

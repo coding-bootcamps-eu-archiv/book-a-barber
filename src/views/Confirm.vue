@@ -1,64 +1,74 @@
 <template>
-  <article class="confirm-page">
-    <section class="confirm-text">
-      <p>You have received an order confirmation by email ✅</p>
+  <h1 class="thanks-text">Thanks for the Booking ✅</h1>
+  <section class="confirm-text"></section>
+
+  <h2>Bestellübersicht</h2>
+  <article class="order">
+    <section class="data-customer">
+      <h3>Kunde:</h3>
+      <p>Vorname:</p>
+      <p>Nachname:</p>
+      <p>E-Mail:</p>
+      <p>Strasse, HsNr.:</p>
+      <p>PLZ:</p>
+      <p>Stadt:</p>
+      <p>Handy:</p>
     </section>
-    <section>
-      <p>
-        <u class="ol-text"><b>Bestellübersicht:</b></u>
-      </p>
-      <section class="order">
-        <section class="adressdaten">
-          <p><u>Adresse:</u></p>
-          <p>Straße</p>
-          <p>PLZ / Stadt</p>
-          <p>Datum</p>
-          <p>Dein Termin bei "Friseurname"</p>
-        </section>
-        <section>
-          <p>
-            <em>Haare und Bart schneiden</em>
-          </p>
-          <p>- Preis: 43€</p>
-        </section>
-      </section>
+    <section class="data-payment">
+      <h3>Datum:</h3>
+      <p>Tag:</p>
+      <p>Uhrzeit:</p>
+      <h3>Bezahlung:</h3>
+      <p>Methode:</p>
+      <p>Summe:</p>
     </section>
   </article>
   <router-link to="/">Back to Start</router-link>
 </template>
 
 <style>
-.ol-text {
+.thanks-text {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  color: brown;
+  background-color: burlywood;
 }
 
-.confirm-page {
-  background-color: beige;
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 80vh;
-}
-
-.confirm-text {
-  border: 2px solid grey;
-  padding: 20px;
-  width: 40vw;
-  height: 20vw;
-}
 .order {
+  margin: auto;
   border: 2px solid grey;
-  padding: 20px;
+  border-radius: 0.5rem;
+  padding: 1rem;
   display: flex;
-  width: 60vw;
+  flex-direction: column;
+  width: 80vw;
   text-align: left;
   /* height: 30vw; */
 }
+
+.data-customer {
+  background-color: darkgray;
+  width: 100%;
+  padding-left: 1rem;
+}
+
+.data-payment {
+  background-color: aqua;
+  width: 100%;
+  padding-left: 1rem;
+}
 @media screen and (min-width: 800px) {
-  .confirm-page {
+  .order {
     flex-direction: row;
     justify-content: space-around;
+  }
+  .data-customer {
+    width: 50%;
+  }
+
+  .data-payment {
+    width: 50%;
   }
 }
 </style>

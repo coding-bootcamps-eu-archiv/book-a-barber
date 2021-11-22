@@ -7,18 +7,21 @@
         "price": "30"
       },
       "date": {
-        "day": "",
-        "time": ""
+        "day": "26.11.2021",
+        "time": "15:00"
       },
       "adress": {
-        "name": "",
-        "street": "",
-        "plz": "",
-        "city": ""
+        "surname": "Diego",
+        "lastname": "Maradona",
+        "email": "diego@gmail.com",
+        "street": "Diego 1",
+        "plz": "00001",
+        "city": "B Aires",
+        "phone": "+12342345423"
       },
       "payment": {
-        "method": "",
-        "sum": "20"
+        "method": "Cash",
+        "sum": "50"
       }
     }
   ]

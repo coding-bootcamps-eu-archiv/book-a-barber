@@ -75,6 +75,19 @@ export default {
     return {
       bookingdatas: data,
     };
+    data () {
+      return {
+          "adress": {
+            "surname": "",
+            "lastname": "",
+            "email": "",
+            "street": "",
+            "plz": "",
+            "city": "",
+            "phone": ""
+    },
+      }
+    }
   },
 };
 console.log(data);

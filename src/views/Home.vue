@@ -51,8 +51,8 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
-  max-width: 70vw;
-  height: 50vw;
+  max-width: 100vw;
+  aspect-ratio: 582 / 388;
 }
 .first-page {
   justify-content: center;

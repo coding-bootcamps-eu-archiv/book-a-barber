@@ -1,13 +1,17 @@
 <template>
   <section>
-    <article>
-      <h1>Termin auswählen</h1>
+    <h1>Termin auswählen</h1>
+    <article class="class1">
       <!-- Monday -->
       <table>
         <tr>
           <th class="days">Montag</th>
         </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
+        <tr
+          @click="chosenAppointment()"
+          v-for="appointment in appointments.appointments"
+          :key="appointment"
+        >
           <td v-if="appointment.day === 'Montag'">{{ appointment.time }}</td>
         </tr>
       </table>
@@ -73,11 +77,16 @@
           </td>
         </tr>
       </table>
+
       <router-link to="/Payment"
         ><button class="button-next-page">
           Auswahl bestätigen
         </button></router-link
       >
+    </article>
+    <article>
+      <h3 id="chosen-appointment">Ihr ausgewählter Termin:</h3>
+      <p id="show-chosen-appointment"></p>
     </article>
   </section>
 </template>
@@ -91,6 +100,14 @@ export default {
       appointments: timeSlots,
     };
   },
+  methods: {
+    chosenAppointment() {
+      console.log(this.appointments);
+      /*  let domElement = this.$el;
+      console.log(domElement); */
+      alert("this appointment has been chosen");
+    },
+  },
 };
 </script>
 
@@ -99,15 +116,30 @@ export default {
   position: absolute;
   bottom: 2rem;
 }
+.class1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 2rem;
+}
 
-table {
-  border-collapse: separate;
-  border-spacing: 0.4rem;
-  height: 14%;
-  width: 14%;
+tr {
+  display: flex;
+  justify-content: center;
 }
 
 .appointments {
   list-style: none;
+}
+
+.days {
+  margin-bottom: 0.5rem;
+}
+
+#chosen-appointment {
+  display: flex;
+  justify-content: left;
+  margin-left: 2rem;
 }
 </style>

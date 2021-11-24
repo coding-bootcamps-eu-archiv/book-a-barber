@@ -8,11 +8,16 @@
           <th class="days">Montag</th>
         </tr>
         <tr
-          @click="chosenAppointment()"
+          @click="chosenAppointment"
           v-for="appointment in appointments.appointments"
           :key="appointment"
         >
-          <td v-if="appointment.day === 'Montag'">{{ appointment.time }}</td>
+          <td
+            :data-appointment-id="appointment.id"
+            v-if="appointment.day === 'Montag'"
+          >
+            {{ appointment.time }}
+          </td>
         </tr>
       </table>
       <!-- Tuesday -->
@@ -20,8 +25,17 @@
         <tr>
           <th class="days">Dienstag</th>
         </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Dienstag'">{{ appointment.time }}</td>
+        <tr
+          @click="chosenAppointment"
+          v-for="appointment in appointments.appointments"
+          :key="appointment"
+        >
+          <td
+            :data-appointment-id="appointment.id"
+            v-if="appointment.day === 'Dienstag'"
+          >
+            {{ appointment.time }}
+          </td>
         </tr>
       </table>
       <!-- Wednesday -->
@@ -29,8 +43,17 @@
         <tr>
           <th class="days">Mittwoch</th>
         </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Mittwoch'">{{ appointment.time }}</td>
+        <tr
+          @click="chosenAppointment"
+          v-for="appointment in appointments.appointments"
+          :key="appointment"
+        >
+          <td
+            :data-appointment-id="appointment.id"
+            v-if="appointment.day === 'Mittwoch'"
+          >
+            {{ appointment.time }}
+          </td>
         </tr>
       </table>
       <!-- Thursday -->
@@ -38,8 +61,15 @@
         <tr>
           <th class="days">Donnerstag</th>
         </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Donnerstag'">
+        <tr
+          @click="chosenAppointment"
+          v-for="appointment in appointments.appointments"
+          :key="appointment"
+        >
+          <td
+            :data-appointment-id="appointment.id"
+            v-if="appointment.day === 'Donnerstag'"
+          >
             {{ appointment.time }}
           </td>
         </tr>
@@ -49,8 +79,15 @@
         <tr>
           <th class="days">Freitag</th>
         </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Freitag'">
+        <tr
+          @click="chosenAppointment"
+          v-for="appointment in appointments.appointments"
+          :key="appointment"
+        >
+          <td
+            :data-appointment-id="appointment.id"
+            v-if="appointment.day === 'Freitag'"
+          >
             {{ appointment.time }}
           </td>
         </tr>
@@ -60,8 +97,15 @@
         <tr>
           <th class="days">Samstag</th>
         </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Samstag'">
+        <tr
+          @click="chosenAppointment"
+          v-for="appointment in appointments.appointments"
+          :key="appointment"
+        >
+          <td
+            :data-appointment-id="appointment.id"
+            v-if="appointment.day === 'Samstag'"
+          >
             {{ appointment.time }}
           </td>
         </tr>
@@ -71,8 +115,15 @@
         <tr>
           <th class="days">Sonntag</th>
         </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Sonntag'">
+        <tr
+          @click="chosenAppointment"
+          v-for="appointment in appointments.appointments"
+          :key="appointment"
+        >
+          <td
+            :data-appointment-id="appointment.id"
+            v-if="appointment.day === 'Sonntag'"
+          >
             {{ appointment.time }}
           </td>
         </tr>
@@ -85,7 +136,9 @@
       >
     </article>
     <article>
-      <h3 id="chosen-appointment">Ihr ausgewählter Termin:</h3>
+      <h3 id="chosen-appointment">
+        Dein ausgewählter Termin: {{ this.value }}
+      </h3>
       <p id="show-chosen-appointment"></p>
     </article>
   </section>
@@ -98,14 +151,14 @@ export default {
   data() {
     return {
       appointments: timeSlots,
+      value: "",
     };
   },
   methods: {
-    chosenAppointment() {
-      console.log(this.appointments);
-      /*  let domElement = this.$el;
-      console.log(domElement); */
-      alert("this appointment has been chosen");
+    chosenAppointment(event) {
+      sessionStorage.setItem("time", event.target.innerText);
+      this.value = sessionStorage.time;
+      console.log(this.value);
     },
   },
 };

@@ -1,8 +1,8 @@
 <template>
   <PlzHannover />
 
-  <div class="primary-feature">
-    <article class="first-page">
+  <div class="primaryFeature">
+    <article class="firstPage">
       <h1>Do you need me? <br />Tell me where</h1>
       <section class="plzSearch">
         <label for="PLZ"></label>
@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style>
-.primary-feature {
+.primaryFeature {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +67,7 @@ export default {
   min-width: 70vw;
   min-height: 60vw;
 }
-.first-page {
+.firstPage {
   display: flex;
   flex-direction: column;
   justify-content: center;

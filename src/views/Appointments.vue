@@ -156,10 +156,16 @@ export default {
   },
   methods: {
     chosenAppointment(event) {
-      sessionStorage.setItem("appointmentTime", event.target.innerText);
-      this.value = sessionStorage.appointmentTime;
+      //debugger;
+      let appointmentId = event.target.getAttribute("data-appointment-id");
+      let appointmentsArray = { ...this.appointments[0] };
+      let appointment = appointmentsArray.find(
+        (appointment) => appointment.id === appointmentId
+      );
 
-      console.log(this.value);
+      console.log(this.appointments);
+      sessionStorage.setItem("appointment", JSON.stringify(appointment));
+      this.value = `${appointment.day} um ${appointment.time}`;
     },
   },
 };

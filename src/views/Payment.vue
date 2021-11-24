@@ -89,9 +89,8 @@ export default {
     readFromLocalStorage() {
       this.surname = localStorage.getItem("surname");
       this.lastname = localStorage.getItem("lastname");
-      this.email = localStorage.getItem("email");
-      this.streetnr = localStorage.getItem("streetnr");
       console.log("surnameauslocalStorage", this.surname);
+      console.log("surnameauslocalStorage", this.lastname);
     },
     addToLocalStorage() {
       const inpSurname = document.getElementById("surname");
@@ -103,7 +102,6 @@ export default {
       const inpPhone = document.getElementById("phone");
 
       const surname = inpSurname.value;
-
       const lastname = inpLastname.value;
       const emailcost = inpEmail.value;
       const street = inpStreet.value;

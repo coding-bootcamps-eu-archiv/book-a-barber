@@ -89,6 +89,7 @@ body {
   }
   .shipping-layout {
     width: 30vw;
+    padding: 0;
   }
 }
 .img-wrapper {

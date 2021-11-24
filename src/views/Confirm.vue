@@ -6,8 +6,8 @@
     <section class="data-customer">
       <h3>Kunde:</h3>
       <!--<p>Vorname: {{ data.adress.surname }}</p>-->
-      <p>Vorname: {{ bookingdatas.data.adress.surname }}</p>
-      <p>Nachname: {{ bookingdatas.data.adress.lastname }}</p>
+      <p>Vorname: {{ this.surname }}</p>
+      <p>Nachname: {{ this.lastname }}</p>
       <p>E-Mail: {{ bookingdatas.data.adress.email }}</p>
       <p>Strasse, HsNr.: {{ bookingdatas.data.adress.street }}</p>
       <p>PLZ: {{ bookingdatas.data.adress.plz }}</p>
@@ -32,7 +32,20 @@ export default {
   data() {
     return {
       bookingdatas: bookings,
+      surname: "",
+      lastname: "",
     };
+  },
+  methods: {
+    readFromLocalStorage() {
+      this.surname = localStorage.getItem("surname");
+      this.lastname = localStorage.getItem("lastname");
+
+      console.log("surnameauslocalStorage", this.surname);
+    },
+  },
+  created() {
+    this.readFromLocalStorage();
   },
 };
 </script>

@@ -19,7 +19,7 @@
           <tr>
             <td>
               <label for="email"
-                ><input type="text" id="email" placeholder="E-Mail"
+                ><input type="email" id="email" placeholder="E-Mail"
               /></label>
             </td>
           </tr>
@@ -63,6 +63,12 @@
           {{ bookingdatas.data.payment.sum }}
         </p>
       </section>
+      <button id="btnToSaveToLocalStorage" @click="addToLocalStorage">
+        Kundendaten speichern
+      </button>
+      <button id="btnToReadFromLocalStorage" @click="readFromLocalStorage">
+        Auslesen
+      </button>
     </article>
     <hr />
     <router-link to="/Confirm">Up to pay!!!</router-link>
@@ -74,8 +80,46 @@ import bookings from "@/components/booking.json";
 export default {
   data() {
     return {
+      surname: "",
       bookingdatas: bookings,
     };
+  },
+
+  methods: {
+    readFromLocalStorage() {
+      this.surname = localStorage.getItem("surname");
+      console.log("surnameauslocalStorage", this.surname);
+    },
+    addToLocalStorage() {
+      const inpSurname = document.getElementById("surname");
+      const inpLastname = document.getElementById("lastname");
+      const inpEmail = document.getElementById("email");
+      const inpStreet = document.getElementById("streetnr");
+      const inpPlz = document.getElementById("plz");
+      const inpCity = document.getElementById("city");
+      const inpPhone = document.getElementById("phone");
+
+      const surname = inpSurname.value;
+
+      const lastname = inpLastname.value;
+      const emailcost = inpEmail.value;
+      const street = inpStreet.value;
+      const plz = inpPlz.value;
+      const city = inpCity.value;
+      const phone = inpPhone.value;
+
+      /* Transfer the Data as an Object
+        const userpaymentInformation = {
+       }*/
+
+      localStorage.setItem("surname", surname);
+      localStorage.setItem("lastname", lastname);
+      localStorage.setItem("emailcost", emailcost);
+      localStorage.setItem("street", street);
+      localStorage.setItem("plz", plz);
+      localStorage.setItem("city", city);
+      localStorage.setItem("phone", phone);
+    },
   },
 };
 </script>

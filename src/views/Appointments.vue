@@ -156,8 +156,9 @@ export default {
   },
   methods: {
     chosenAppointment(event) {
-      sessionStorage.setItem("time", event.target.innerText);
-      this.value = sessionStorage.time;
+      sessionStorage.setItem("appointmentTime", event.target.innerText);
+      this.value = sessionStorage.appointmentTime;
+
       console.log(this.value);
     },
   },
@@ -194,5 +195,9 @@ tr {
   display: flex;
   justify-content: left;
   margin-left: 2rem;
+}
+
+td:hover {
+  background-color: lightgrey;
 }
 </style>

@@ -100,6 +100,7 @@ export default {
   justify-content: center;
   backdrop-filter: blur(40px);
   margin: auto;
+  border-radius: 10%;
 }
 
 .validBtn {

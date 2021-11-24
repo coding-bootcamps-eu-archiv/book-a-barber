@@ -156,9 +156,9 @@ export default {
   },
   methods: {
     chosenAppointment(event) {
-      //debugger;
+      debugger;
       let appointmentId = event.target.getAttribute("data-appointment-id");
-      let appointmentsArray = { ...this.appointments[0] };
+      let appointmentsArray = [...this.appointments];
       let appointment = appointmentsArray.find(
         (appointment) => appointment.id === appointmentId
       );

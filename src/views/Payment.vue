@@ -88,6 +88,9 @@ export default {
   methods: {
     readFromLocalStorage() {
       this.surname = localStorage.getItem("surname");
+      this.lastname = localStorage.getItem("lastname");
+      this.email = localStorage.getItem("email");
+      this.streetnr = localStorage.getItem("streetnr");
       console.log("surnameauslocalStorage", this.surname);
     },
     addToLocalStorage() {

@@ -8,11 +8,11 @@
       <!--<p>Vorname: {{ data.adress.surname }}</p>-->
       <p>Vorname: {{ this.surname }}</p>
       <p>Nachname: {{ this.lastname }}</p>
-      <p>E-Mail: {{ bookingdatas.data.adress.email }}</p>
-      <p>Strasse, HsNr.: {{ bookingdatas.data.adress.street }}</p>
-      <p>PLZ: {{ bookingdatas.data.adress.plz }}</p>
-      <p>Stadt: {{ bookingdatas.data.adress.city }}</p>
-      <p>Handy: {{ bookingdatas.data.adress.phone }}</p>
+      <p>E-Mail: {{ this.emailcost }}</p>
+      <p>Strasse, HsNr.: {{ this.street }}</p>
+      <p>PLZ: {{ this.plz }}</p>
+      <p>Stadt: {{ this.city }}</p>
+      <p>Handy: {{ this.phone }}</p>
     </section>
     <section class="data-payment">
       <h3>Datum:</h3>
@@ -34,14 +34,21 @@ export default {
       bookingdatas: bookings,
       surname: "",
       lastname: "",
+      email: "",
+      streetnr: "",
     };
   },
   methods: {
     readFromLocalStorage() {
       this.surname = localStorage.getItem("surname");
       this.lastname = localStorage.getItem("lastname");
+      this.emailcost = localStorage.getItem("emailcost");
+      this.street = localStorage.getItem("street");
+      this.plz = localStorage.getItem("plz");
+      this.city = localStorage.getItem("city");
+      this.phone = localStorage.getItem("phone");
 
-      console.log("surnameauslocalStorage", this.surname);
+      /*console.log("surnameauslocalStorage", this.surname);*/
     },
   },
   created() {

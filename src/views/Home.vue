@@ -1,5 +1,5 @@
 <template>
-  <PlzHannover v-for="plz in plzs" v-bind="plz" :key="plz" />
+  <PlzHannover />
 
   <div class="primary-feature">
     <article class="first-page">
@@ -77,8 +77,7 @@ export default {
 }
 
 .overlay {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
   top: 0;
   left: 0;
   height: 100%;
@@ -92,21 +91,27 @@ export default {
 .validationTxt {
   position: absolute;
   display: flex;
-  color: red;
-  font: bold;
-  background-color: white;
-  border: 5px solid black;
-  width: 300px;
-  height: 200px;
-  padding: 10px;
+  font-size: 1.5rem;
+  width: 35vw;
+  height: 25vw;
+  padding: 1.5rem;
   text-align: center;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(40px);
+  margin: auto;
 }
 
 .validBtn {
   display: flex;
   position: absolute;
   align-self: flex-end;
+  background: rgb(181, 181, 181);
+  border: rgb(131, 131, 131) solid 2px;
+  padding: 0.3rem 0.6rem;
+}
+
+.validBtn:hover {
+  background-color: rgb(131, 131, 131);
 }
 </style>

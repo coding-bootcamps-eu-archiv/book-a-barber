@@ -59,8 +59,8 @@ export default {
       this.city = localStorage.getItem("city");
       this.phone = localStorage.getItem("phone");
       /* Datas from Enrico*/
-      this.appointmentDay = localStorage.getItem("appointmentday");
-      this.appointmentTime = localStorage.getItem("appointmenttime");
+      this.appointmentDay = localStorage.getItem("appointmentDay");
+      this.appointmentTime = localStorage.getItem("appointmentTime");
 
       /* Datas from Services*/
       this.serviceName = localStorage.getItem("serviceName");

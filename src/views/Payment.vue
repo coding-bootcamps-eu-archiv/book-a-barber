@@ -19,7 +19,7 @@
           <tr>
             <td>
               <label for="email"
-                ><input type="text" id="email" placeholder="E-Mail"
+                ><input type="email" id="email" placeholder="E-Mail"
               /></label>
             </td>
           </tr>
@@ -58,26 +58,73 @@
             <th>ZUSAMMENFASSUNG</th>
           </tr>
         </table>
-        <p v-for="bookingdata in bookingdatas.data" :key="bookingdata">
-          {{ bookingdata.service.name }} {{ bookingdata.payment.sum }}
-        </p>
+        <div class="infoshieldPayment">
+          <p>{{ this.serviceName }}</p>
+          <p>Eur: {{ this.sumPayment }}</p>
+        </div>
+
+        <p>Derzeit nehmen wir nur Barzahlungen am Ort an</p>
       </section>
     </article>
+    <button id="btnToSaveToLocalStorage" @click="addToLocalStorage">
+      Kundendaten speichern
+    </button>
     <hr />
     <router-link to="/Confirm">Up to pay!!!</router-link>
   </article>
 </template>
 
 <script>
-import data from "@/components/booking.json";
+import bookings from "@/components/booking.json";
 export default {
   data() {
     return {
-      bookingdatas: data,
+      surname: "",
+      serviceName: "",
+      sumPayment: "",
+      bookingdatas: bookings,
     };
   },
+
+  methods: {
+    readFromLocalStorage() {
+      this.serviceName = localStorage.getItem("serviceName");
+      this.sumPayment = localStorage.getItem("sumPayment");
+    },
+    addToLocalStorage() {
+      const inpSurname = document.getElementById("surname");
+      const inpLastname = document.getElementById("lastname");
+      const inpEmail = document.getElementById("email");
+      const inpStreet = document.getElementById("streetnr");
+      const inpPlz = document.getElementById("plz");
+      const inpCity = document.getElementById("city");
+      const inpPhone = document.getElementById("phone");
+
+      const surname = inpSurname.value;
+      const lastname = inpLastname.value;
+      const emailcost = inpEmail.value;
+      const street = inpStreet.value;
+      const plz = inpPlz.value;
+      const city = inpCity.value;
+      const phone = inpPhone.value;
+
+      /* Transfer the Data as an Object
+        const userpaymentInformation = {
+       }*/
+
+      localStorage.setItem("surname", surname);
+      localStorage.setItem("lastname", lastname);
+      localStorage.setItem("emailcost", emailcost);
+      localStorage.setItem("street", street);
+      localStorage.setItem("plz", plz);
+      localStorage.setItem("city", city);
+      localStorage.setItem("phone", phone);
+    },
+  },
+  created() {
+    this.readFromLocalStorage();
+  },
 };
-console.log(data);
 </script>
 
 <style>
@@ -110,6 +157,11 @@ body {
   background-color: var(--card-background-color);
   padding: 3rem;
   margin: 5rem;
+}
+
+.infoshieldPayment {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 800px) {

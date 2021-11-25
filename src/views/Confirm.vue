@@ -1,64 +1,139 @@
 <template>
-  <article class="confirm-page">
-    <section class="confirm-text">
-      <p>You have received an order confirmation by email ✅</p>
-    </section>
-    <section>
-      <p>
-        <u class="ol-text"><b>Bestellübersicht:</b></u>
-      </p>
-      <section class="order">
-        <section class="adressdaten">
-          <p><u>Adresse:</u></p>
-          <p>Straße</p>
-          <p>PLZ / Stadt</p>
-          <p>Datum</p>
-          <p>Dein Termin bei "Friseurname"</p>
-        </section>
-        <section>
-          <p>
-            <em>Haare und Bart schneiden</em>
-          </p>
-          <p>- Preis: 43€</p>
-        </section>
+  <h1 class="thanks-text">Thanks for the Booking ✅</h1>
+
+  <fieldset>
+    <legend><h2>Bestellübersicht</h2></legend>
+    <article class="order">
+      <section class="data-customer">
+        <h3>Kunde:</h3>
+        <!--<p>Vorname: {{ data.adress.surname }}</p>-->
+        <p>Vorname: {{ this.surname }}</p>
+        <p>Nachname: {{ this.lastname }}</p>
+        <p>E-Mail: {{ this.emailcost }}</p>
+        <p>Strasse, HsNr.: {{ this.street }}</p>
+        <p>PLZ: {{ this.plz }}</p>
+        <p>Stadt: {{ this.city }}</p>
+        <p>Handy: {{ this.phone }}</p>
       </section>
-    </section>
-  </article>
-  <router-link to="/">Back to Start</router-link>
+      <section class="data-payment">
+        <h3>Leistung:</h3>
+        <p>Bezeichnung: {{ this.serviceName }}</p>
+        <h3>Datum:</h3>
+        <p>Tag: {{ this.appointmentDay }}</p>
+        <p>Uhrzeit: {{ this.appointmentTime }}</p>
+        <h3>Bezahlung:</h3>
+        <p>Summe: {{ this.sumPayment }}</p>
+      </section>
+    </article>
+  </fieldset>
+  <router-link
+    id="btnToClearLocalStorage"
+    @click="clearDatasOfLocalStorage()"
+    to="/"
+    >Back to Start</router-link
+  >
 </template>
 
+<script>
+import bookings from "@/components/booking.json";
+export default {
+  data() {
+    return {
+      bookingdatas: bookings,
+      surname: "",
+      lastname: "",
+      email: "",
+      streetnr: "",
+      plz: "",
+      city: "",
+      phone: "",
+    };
+  },
+  methods: {
+    readFromLocalStorage() {
+      this.surname = localStorage.getItem("surname");
+      this.lastname = localStorage.getItem("lastname");
+      this.emailcost = localStorage.getItem("emailcost");
+      this.street = localStorage.getItem("street");
+      this.plz = localStorage.getItem("plz");
+      this.city = localStorage.getItem("city");
+      this.phone = localStorage.getItem("phone");
+      /* Datas from Enrico*/
+      this.appointmentDay = localStorage.getItem("appointmentday");
+      this.appointmentTime = localStorage.getItem("appointmenttime");
+
+      /* Datas from Services*/
+      this.serviceName = localStorage.getItem("serviceName");
+      this.sumPayment = localStorage.getItem("sumPayment");
+
+      /*console.log("surnameauslocalStorage", this.surname);*/
+    },
+    clearDatasOfLocalStorage() {
+      localStorage.clear();
+    },
+  },
+
+  created() {
+    this.readFromLocalStorage();
+  },
+};
+</script>
+
 <style>
-.ol-text {
+.thanks-text {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  color: brown;
+  background-color: burlywood;
 }
 
-.confirm-page {
-  background-color: beige;
+fieldset {
+  margin: auto;
+  border: 2px solid grey;
+  border-radius: 0.5rem;
+  padding: 1rem;
   display: flex;
-  gap: 2rem;
-  justify-content: center;
   flex-direction: column;
-  align-items: center;
-  height: 80vh;
+  width: 80vw;
+  text-align: left;
+}
+/*.order {
+  margin: auto;
+  border: 2px solid grey;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  text-align: left;
+   
+}*/
+
+.data-customer {
+  background-color: darkgray;
+  width: 100%;
+  padding-left: 1rem;
 }
 
-.confirm-text {
-  border: 2px solid grey;
-  padding: 20px;
-  width: 40vw;
-  height: 20vw;
-}
-.order {
-  border: 2px solid grey;
-  padding: 20px;
-  display: flex;
-  width: 60vw;
-  text-align: left;
-  /* height: 30vw; */
+.data-payment {
+  background-color: aqua;
+  width: 100%;
+  padding-left: 1rem;
 }
 @media screen and (min-width: 800px) {
-  .confirm-page {
+  .order {
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 0;
+  }
+  .data-customer {
+    width: 50%;
+  }
+
+  .data-payment {
+    width: 50%;
   }
 }
 </style>

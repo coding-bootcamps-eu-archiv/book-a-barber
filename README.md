@@ -1,4 +1,4 @@
-# test-1
+# Book a barber project
 
 ## Project setup
 ```

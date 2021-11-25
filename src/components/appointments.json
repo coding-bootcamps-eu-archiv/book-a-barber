@@ -1,69 +1,52 @@
-{
-  "appointments": [
-    {
-      "id": 1,
-      "day": "Montag",
-      "time": "08:00"
-    },
-    {
-      "id": 2,
-      "day": "Montag",
-      "time": "09:00"
-    },
-    {
-      "id": 3,
-      "day": "Dienstag",
-      "time": "09:00"
-    },
-    {
-      "id": 4,
-      "day": "Mittwoch",
-      "time": "10:00"
-    },
-    {
-      "id": 5,
-      "day": "Mittwoch",
-      "time": "15:00"
-    },
-    {
-      "id": 6,
-      "day": "Mittwoch",
-      "time": "17:00"
-    },
-    {
-      "id": 7,
-      "day": "Mittwoch",
-      "time": "19:00"
-    },
-    {
-      "id": 8,
-      "day": "Donnerstag",
-      "time": "12:00"
-    },
-    {
-      "id": 9,
-      "day": "Donnerstag",
-      "time": "13:00"
-    },
-    {
-      "id": 10,
-      "day": "Freitag",
-      "time": "10:00"
-    },
-    {
-      "id": 11,
-      "day": "Samstag",
-      "time": "08:00"
-    },
-    {
-      "id": 12,
-      "day": "Samstag",
-      "time": "10:00"
-    },
-    {
-      "id": 13,
-      "day": "Samstag",
-      "time": "12:00"
-    }
-  ]
-}
+[
+  {
+    "day": "Montag",
+    "slots": [
+      {
+        "id": 1,
+        "day": "Montag",
+        "time": "08:00"
+      },
+      {
+        "id": 2,
+        "day": "Montag",
+        "time": "09:00"
+      }
+    ]
+  },
+  {
+    "day": "Dienstag",
+    "slots": [
+      {
+        "time": "08:00"
+      }
+    ]
+  },
+  {
+    "day": "Mittwoch",
+    "slots": [
+      {
+        "time": "08:00"
+      }
+    ]
+  },
+  {
+    "day": "Donnerstag",
+    "slots": [
+      {
+        "time": "08:00"
+      }
+    ]
+  },
+  {
+    "day": "Freitag",
+    "slots": [
+      {
+        "time": "08:00"
+      },
+      {
+        "time": "10:00"
+      }
+    ]
+  }
+]

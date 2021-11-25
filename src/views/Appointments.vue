@@ -2,129 +2,17 @@
   <section>
     <h1>Termin auswählen</h1>
     <article class="class1">
-      <!-- Monday -->
-      <table>
+      <table v-for="appointment in appointments" :key="appointment.day">
         <tr>
-          <th class="days">Montag</th>
+          <th class="days">{{ appointment.day }}</th>
         </tr>
         <tr
-          @click="chosenAppointment"
-          v-for="appointment in appointments.appointments"
-          :key="appointment"
+          @click="chosenAppointment(slot)"
+          v-for="slot in appointment.slots"
+          :key="slot"
         >
-          <td
-            :data-appointment-id="appointment.id"
-            v-if="appointment.day === 'Montag'"
-          >
-            {{ appointment.time }}
-          </td>
-        </tr>
-      </table>
-      <!-- Tuesday -->
-      <table>
-        <tr>
-          <th class="days">Dienstag</th>
-        </tr>
-        <tr
-          @click="chosenAppointment"
-          v-for="appointment in appointments.appointments"
-          :key="appointment"
-        >
-          <td
-            :data-appointment-id="appointment.id"
-            v-if="appointment.day === 'Dienstag'"
-          >
-            {{ appointment.time }}
-          </td>
-        </tr>
-      </table>
-      <!-- Wednesday -->
-      <table>
-        <tr>
-          <th class="days">Mittwoch</th>
-        </tr>
-        <tr
-          @click="chosenAppointment"
-          v-for="appointment in appointments.appointments"
-          :key="appointment"
-        >
-          <td
-            :data-appointment-id="appointment.id"
-            v-if="appointment.day === 'Mittwoch'"
-          >
-            {{ appointment.time }}
-          </td>
-        </tr>
-      </table>
-      <!-- Thursday -->
-      <table>
-        <tr>
-          <th class="days">Donnerstag</th>
-        </tr>
-        <tr
-          @click="chosenAppointment"
-          v-for="appointment in appointments.appointments"
-          :key="appointment"
-        >
-          <td
-            :data-appointment-id="appointment.id"
-            v-if="appointment.day === 'Donnerstag'"
-          >
-            {{ appointment.time }}
-          </td>
-        </tr>
-      </table>
-      <!-- Friday -->
-      <table>
-        <tr>
-          <th class="days">Freitag</th>
-        </tr>
-        <tr
-          @click="chosenAppointment"
-          v-for="appointment in appointments.appointments"
-          :key="appointment"
-        >
-          <td
-            :data-appointment-id="appointment.id"
-            v-if="appointment.day === 'Freitag'"
-          >
-            {{ appointment.time }}
-          </td>
-        </tr>
-      </table>
-      <!-- Saturday -->
-      <table>
-        <tr>
-          <th class="days">Samstag</th>
-        </tr>
-        <tr
-          @click="chosenAppointment"
-          v-for="appointment in appointments.appointments"
-          :key="appointment"
-        >
-          <td
-            :data-appointment-id="appointment.id"
-            v-if="appointment.day === 'Samstag'"
-          >
-            {{ appointment.time }}
-          </td>
-        </tr>
-      </table>
-      <!-- Sunday -->
-      <table>
-        <tr>
-          <th class="days">Sonntag</th>
-        </tr>
-        <tr
-          @click="chosenAppointment"
-          v-for="appointment in appointments.appointments"
-          :key="appointment"
-        >
-          <td
-            :data-appointment-id="appointment.id"
-            v-if="appointment.day === 'Sonntag'"
-          >
-            {{ appointment.time }}
+          <td>
+            {{ slot.time }}
           </td>
         </tr>
       </table>
@@ -155,17 +43,9 @@ export default {
     };
   },
   methods: {
-    chosenAppointment(event) {
-      debugger;
-      let appointmentId = event.target.getAttribute("data-appointment-id");
-      let appointmentsArray = [...this.appointments];
-      let appointment = appointmentsArray.find(
-        (appointment) => appointment.id === appointmentId
-      );
-
-      console.log(this.appointments);
-      sessionStorage.setItem("appointment", JSON.stringify(appointment));
-      this.value = `${appointment.day} um ${appointment.time}`;
+    chosenAppointment(slot) {
+      localStorage.setItem("appointment", JSON.stringify(slot));
+      this.value = `${slot.day} um ${slot.time}`;
     },
   },
 };

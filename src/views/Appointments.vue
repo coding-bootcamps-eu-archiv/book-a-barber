@@ -44,7 +44,8 @@ export default {
   },
   methods: {
     chosenAppointment(slot) {
-      localStorage.setItem("appointment", JSON.stringify(slot));
+      localStorage.setItem("appointmentDay", JSON.stringify(slot.day));
+      localStorage.setItem("appointmentTime", JSON.stringify(slot.time));
       this.value = `${slot.day} um ${slot.time}`;
     },
   },

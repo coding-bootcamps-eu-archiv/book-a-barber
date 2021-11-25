@@ -3,7 +3,7 @@
 
   <div class="primaryFeature">
     <article class="firstPage">
-      <h1>Do you need me? <br />Tell me where</h1>
+      <h1>Dein Barbier <br />kommt zu dir!</h1>
       <section class="plzSearch">
         <label for="PLZ"></label>
         <input
@@ -64,16 +64,18 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
+  width: 100%;
   min-width: 70vw;
   min-height: 60vw;
 }
 .firstPage {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   color: white;
   margin: 0;
+  width: 100%;
 }
 
 .overlay {
@@ -114,5 +116,38 @@ export default {
 
 .validBtn:hover {
   background-color: rgb(131, 131, 131);
+}
+
+/* input {
+  display: block;
+  width: 80%;
+  justify-content: center;
+}
+button {
+  display: block; */
+
+.plzSearch {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+h1 {
+  width: 100%;
+  justify-content: left;
+}
+
+@media screen and (min-width: 768px) {
+  .primaryFeature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://baerte.info/wp-content/uploads/2019/06/barber.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    min-width: 70vw;
+    min-height: 60vw;
+  }
 }
 </style>

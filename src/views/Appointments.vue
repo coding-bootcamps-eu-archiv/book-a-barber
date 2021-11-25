@@ -1,83 +1,33 @@
 <template>
   <section>
     <h1>Termin auswählen</h1>
-    <article>
-      <!-- Monday -->
-      <table>
+    <article class="class1">
+      <table v-for="appointment in appointments" :key="appointment.day">
         <tr>
-          <th class="days">Montag</th>
+          <th class="days">{{ appointment.day }}</th>
         </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Montag'">{{ appointment.time }}</td>
-        </tr>
-      </table>
-      <!-- Tuesday -->
-      <table>
-        <tr>
-          <th class="days">Dienstag</th>
-        </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Dienstag'">{{ appointment.time }}</td>
-        </tr>
-      </table>
-      <!-- Wednesday -->
-      <table>
-        <tr>
-          <th class="days">Mittwoch</th>
-        </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Mittwoch'">{{ appointment.time }}</td>
-        </tr>
-      </table>
-      <!-- Thursday -->
-      <table>
-        <tr>
-          <th class="days">Donnerstag</th>
-        </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Donnerstag'">
-            {{ appointment.time }}
+        <tr
+          @click="chosenAppointment(slot)"
+          v-for="slot in appointment.slots"
+          :key="slot"
+        >
+          <td>
+            {{ slot.time }}
           </td>
         </tr>
       </table>
-      <!-- Friday -->
-      <table>
-        <tr>
-          <th class="days">Freitag</th>
-        </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Donnerstag'">
-            {{ appointment.time }}
-          </td>
-        </tr>
-      </table>
-      <!-- Saturday -->
-      <table>
-        <tr>
-          <th class="days">Samstag</th>
-        </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Donnerstag'">
-            {{ appointment.time }}
-          </td>
-        </tr>
-      </table>
-      <!-- Sunday -->
-      <table>
-        <tr>
-          <th class="days">Sonntag</th>
-        </tr>
-        <tr v-for="appointment in appointments.appointments" :key="appointment">
-          <td v-if="appointment.day === 'Donnerstag'">
-            {{ appointment.time }}
-          </td>
-        </tr>
-      </table>
+
       <router-link to="/Payment"
         ><button class="button-next-page">
           Auswahl bestätigen
         </button></router-link
       >
+    </article>
+    <article>
+      <h3 id="chosen-appointment">
+        Dein ausgewählter Termin: {{ this.value }}
+      </h3>
+      <p id="show-chosen-appointment"></p>
     </article>
   </section>
 </template>
@@ -89,7 +39,15 @@ export default {
   data() {
     return {
       appointments: timeSlots,
+      value: "",
     };
+  },
+  methods: {
+    chosenAppointment(slot) {
+      localStorage.setItem("appointmentDay", JSON.stringify(slot.day));
+      localStorage.setItem("appointmentTime", JSON.stringify(slot.time));
+      this.value = `${slot.day} um ${slot.time}`;
+    },
   },
 };
 </script>
@@ -99,7 +57,7 @@ export default {
   position: absolute;
   bottom: 2rem;
 }
-article {
+.class1 {
   height: 100%;
   width: 100%;
   display: flex;
@@ -118,5 +76,15 @@ tr {
 
 .days {
   margin-bottom: 0.5rem;
+}
+
+#chosen-appointment {
+  display: flex;
+  justify-content: left;
+  margin-left: 2rem;
+}
+
+td:hover {
+  background-color: lightgrey;
 }
 </style>

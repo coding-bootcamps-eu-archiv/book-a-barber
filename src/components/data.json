@@ -11,7 +11,7 @@
     "id": 2,
     "title": "Barber",
     "avatar": "pic-barber",
-    "description": "Vollbart schnitt, Konturen Rasur und Styling. Bei Bedarf Flaumhaarentfernung mit heißem Wachs.",
+    "description": "Vollbart Schnitt, Rasur und Styling. Bei Bedarf Behandlungung mit heißem Wachs.",
     "duration": "20min",
     "price": "40"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "title": "All in One",
     "avatar": "pic-all-in-one",
-    "description": "Haarschnitt und styling + 2x waschen, Perfekt für alle denen der Schnauzer über die Oberlippe hängt oder der drei Tage Bart wieder eine form braucht.",
+    "description": "Haarschnitt und Bartstyling, perfekt für alle wo drei Tage Bart wieder eine Form braucht.",
     "duration": "45min",
     "price": "65"
   }

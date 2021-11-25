@@ -63,6 +63,10 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 0 2rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 25px;
+  opacity: 90%;
 }
 
 tr {
@@ -98,6 +102,7 @@ td:hover {
   background: var(--btn-background-clr);
   border: var(--btn-border);
   padding: var(--btn-padding);
+  border-radius: 25px;
 }
 
 .button-next-page:hover {
@@ -115,6 +120,7 @@ td:hover {
     background: var(--btn-background-clr);
     border: var(--btn-border);
     padding: var(--btn-padding);
+    border-radius: 25px;
   }
 }
 </style>

@@ -7,7 +7,7 @@
     <img id="logo" src="@/images/bookabarberlogo.png" alt="" />
   </header>
   <router-view />
-
+  <hr />
   <footer>©Enrico Carruba</footer>
 </template>
 
@@ -17,6 +17,7 @@ html {
   --btn-border: rgb(131, 131, 131) solid 2px;
   --btn-padding: 0.3rem 0.6rem;
   --btn-hover-clr: rgb(131, 131, 131);
+  --border-radius: (10%);
 }
 
 .nav-leiste {

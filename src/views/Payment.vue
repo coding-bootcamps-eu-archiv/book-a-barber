@@ -1,6 +1,7 @@
 <template>
   <MultiStepHeader :step="4" />
   <article>
+    <br />
     <h1>I will give Shine to you, give me your Money</h1>
 
     <article class="customer">
@@ -9,14 +10,20 @@
           <tr>
             <th>ICH BUCHE ALS:</th>
           </tr>
-          <td>
-            <label for="surname"
-              ><input type="text" id="surname" placeholder="Vorname"
-            /></label>
-            <label for="lastname"
-              ><input type="text" id="lastname" placeholder="Nachname"
-            /></label>
-          </td>
+          <tr>
+            <td>
+              <label for="surname"
+                ><input type="text" id="surname" placeholder="Vorname"
+              /></label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="lastname"
+                ><input type="text" id="lastname" placeholder="Nachname"
+              /></label>
+            </td>
+          </tr>
           <tr>
             <td>
               <label for="email"
@@ -39,6 +46,10 @@
               <label for="plz"
                 ><input type="text" id="plz" placeholder="PLZ"
               /></label>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <label for="city"
                 ><input type="text" id="city" placeholder="Stadt"
               /></label>
@@ -70,8 +81,10 @@
     <button id="btnToSaveToLocalStorage" @click="addToLocalStorage">
       Kundendaten speichern
     </button>
-    <hr />
-    <router-link to="/Confirm">Up to pay!!!</router-link>
+    <br />
+    <router-link to="/Confirm">
+      <button class="btnToPay">Up to pay!!!</button></router-link
+    >
   </article>
 </template>
 
@@ -137,6 +150,7 @@ export default {
 *:after {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   --header-color: lightslategray;
@@ -145,6 +159,7 @@ body {
   --body-background-color: darkgoldenrod;
   --card-background-color: blanchedalmond;
   --buying-area-bg-color: white;
+  --nav-color: rgb(189, 135, 97);
 }
 
 .customer {
@@ -153,14 +168,24 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--body-background-color);
 }
 
-.customer-datas,
-.customer-payment {
-  background-color: var(--card-background-color);
+.customer-datas {
+  background-color: var(--btn-hover-clr);
   padding: 3rem;
-  margin: 5rem;
+  margin: 5rem auto 2.5rem auto;
+  opacity: 90%;
+  max-width: 240px;
+  border-radius: 10%;
+}
+
+.customer-payment {
+  background-color: var(--btn-hover-clr);
+  padding: 3rem;
+  margin: 2.5rem auto 5rem auto;
+  opacity: 90%;
+  max-width: 240px;
+  border-radius: 10%;
 }
 
 .infoshieldPayment {
@@ -168,7 +193,12 @@ body {
   justify-content: space-between;
 }
 
-@media screen and (min-width: 800px) {
+input {
+  border-radius: 25px;
+  padding-left: 0.3rem;
+}
+
+@media screen and (min-width: 600px) {
   .customer {
     margin: auto;
     width: 80vw;
@@ -176,9 +206,48 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
   }
-  .customer-data,
-  .customer-payment {
-    width: 38vw;
+
+  .customer-datas {
+    background-color: var(--btn-hover-clr);
+    padding: 3rem;
+    margin: 5rem 2.5rem 5rem 5rem;
+    opacity: 90%;
+    max-width: 250px;
+    border-radius: 10%;
   }
+
+  .customer-payment {
+    background-color: var(--btn-hover-clr);
+    padding: 3rem;
+    margin: 5rem 5rem 5rem 2.5rem;
+    opacity: 90%;
+    max-width: 250px;
+    border-radius: 10%;
+    justify-self: center;
+  }
+}
+
+#btnToSaveToLocalStorage {
+  background: var(--btn-background-clr);
+  border: var(--btn-border);
+  padding: var(--btn-padding);
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+#btnToSaveToLocalStorage:hover {
+  background-color: var(--btn-hover-clr);
+}
+
+.btnToPay {
+  background: var(--btn-background-clr);
+  border: var(--btn-border);
+  padding: var(--btn-padding);
+  margin: 1rem auto;
+  border-radius: 25px;
+}
+
+.btnToPay:hover {
+  background-color: var(--btn-hover-clr);
 }
 </style>

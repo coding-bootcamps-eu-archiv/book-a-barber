@@ -20,9 +20,12 @@
         <div class="overlay" v-if="validation">
           <div class="validationTxt">
             {{ validation }}
-            <button class="validBtn" @click="this.validation = false">
-              Okay
-            </button>
+            <br />
+            <div>
+              <button class="validBtn" @click="this.validation = false">
+                Okay
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -70,14 +73,12 @@ export default {
   background-size: cover;
   margin: auto;
   width: 100%;
-  min-width: 70vw;
+  min-width: 100vw;
   min-height: 60vw;
 }
 .firstPage {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
   color: white;
   margin: 0;
   width: 100%;
@@ -100,8 +101,8 @@ export default {
   position: absolute;
   display: flex;
   font-size: 1.5rem;
-  width: 35vw;
-  height: 25vw;
+  width: 25rem;
+  height: 20rem;
   padding: 1.5rem;
   text-align: center;
   align-items: center;
@@ -109,29 +110,24 @@ export default {
   backdrop-filter: blur(40px);
   margin: auto;
   border-radius: 10%;
+  flex-direction: column;
 }
 
 .validBtn {
+  display: flex;
   position: relative;
   align-self: flex-end;
-
+  justify-content: center;
   padding: 0.3rem 0.6rem;
   background: var(--btn-background-clr);
   border: var(--btn-border);
   border-radius: 25px;
+  margin: 2rem;
 }
 
 .validBtn:hover {
   background-color: rgb(131, 131, 131);
 }
-
-/* input {
-  display: block;
-  width: 80%;
-  justify-content: center;
-}
-button {
-  display: block; */
 
 h1 {
   width: 100%;
@@ -144,7 +140,7 @@ h1 {
   border-radius: 25px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 600px) {
   .primaryFeature {
     display: flex;
     align-items: center;
@@ -155,6 +151,75 @@ h1 {
     margin: auto;
     min-width: 70vw;
     min-height: 60vw;
+  }
+
+  .validationTxt {
+    position: absolute;
+    display: flex;
+    width: 60vw;
+    height: 40vw;
+    padding: 1.5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(40px);
+    margin: auto;
+    border-radius: 10%;
+    flex-direction: column;
+  }
+
+  .validBtn {
+    display: flex;
+    position: relative;
+    align-self: flex-end;
+    justify-content: center;
+    padding: 0;
+    background: var(--btn-background-clr);
+    border: var(--btn-border);
+    border-radius: 25px;
+    margin: 0 0.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .primaryFeature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://baerte.info/wp-content/uploads/2019/06/barber.jpg");
+    background-repeat: no-repeat;
+    background-size: content;
+    margin: auto;
+    min-width: 70vw;
+    min-height: 60vw;
+  }
+
+  .validationTxt {
+    position: absolute;
+    display: flex;
+    font-size: 1.3rem;
+    width: 60vw;
+    height: 80vw;
+    padding: 1.5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(40px);
+    margin: auto;
+    border-radius: 10%;
+    flex-direction: column;
+  }
+
+  .validBtn {
+    display: flex;
+    position: relative;
+    align-self: flex-end;
+    justify-content: center;
+    padding: 0;
+    background: var(--btn-background-clr);
+    border: var(--btn-border);
+    border-radius: 25px;
+    margin: 0 0.5rem;
   }
 }
 </style>

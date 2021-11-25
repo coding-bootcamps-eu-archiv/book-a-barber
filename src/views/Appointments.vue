@@ -1,4 +1,22 @@
 <template>
+  <MultiStepHeader :step="3" />
+  <section>
+    <h1>Termin auswählen</h1>
+    <article class="class1">
+      <table v-for="appointment in appointments" :key="appointment.day">
+        <tr>
+          <th class="days">{{ appointment.day }}</th>
+        </tr>
+        <tr
+          @click="chosenAppointment(slot)"
+          v-for="slot in appointment.slots"
+          :key="slot"
+        >
+          <td>
+            {{ slot.time }}
+          </td>
+        </tr>
+      </table>
   <body>
     <section>
       <h1>Termin auswählen</h1>
@@ -19,6 +37,7 @@
         </table>
       </article>
 
+
       <article>
         <h3 id="chosen-appointment">
           Dein ausgewählter Termin: {{ this.value }}
@@ -36,6 +55,7 @@
 
 <script>
 import timeSlots from "@/components/appointments.json";
+import MultiStepHeader from "@/components/MultiStepHeader.vue";
 
 export default {
   data() {
@@ -43,6 +63,9 @@ export default {
       appointments: timeSlots,
       value: "",
     };
+  },
+  components: {
+    MultiStepHeader,
   },
   methods: {
     chosenAppointment(slot) {
@@ -55,8 +78,11 @@ export default {
 </script>
 
 <style>
+.class1 {
+  height: 100%;
 body {
   height: 30rem;
+
   width: 100%;
 }
 .timeSlots {

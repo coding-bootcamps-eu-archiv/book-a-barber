@@ -1,4 +1,5 @@
 <template>
+  <MultiStepHeader :step="2" />
   <article class="page-services">
     <h1>Please choose one from our services!</h1>
   </article>
@@ -18,8 +19,9 @@
 <script>
 import ServiceItem from "@/components/ServiceItem.vue";
 import data from "@/components/data.json";
+import MultiStepHeader from "@/components/MultiStepHeader.vue";
 export default {
-  components: { ServiceItem },
+  components: { ServiceItem, MultiStepHeader },
   data: () => ({
     barberServices: data,
   }),

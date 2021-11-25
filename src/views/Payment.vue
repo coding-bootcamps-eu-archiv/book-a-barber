@@ -58,15 +58,17 @@
             <th>ZUSAMMENFASSUNG</th>
           </tr>
         </table>
-        <p>
-          {{ this.serviceName }}
-          {{ this.sumPayment }}
-        </p>
+        <div class="infoshieldPayment">
+          <p>{{ this.serviceName }}</p>
+          <p>Eur: {{ this.sumPayment }}</p>
+        </div>
+
+        <p>Derzeit nehmen wir nur Barzahlungen am Ort an</p>
       </section>
-      <button id="btnToSaveToLocalStorage" @click="addToLocalStorage">
-        Kundendaten speichern
-      </button>
     </article>
+    <button id="btnToSaveToLocalStorage" @click="addToLocalStorage">
+      Kundendaten speichern
+    </button>
     <hr />
     <router-link to="/Confirm">Up to pay!!!</router-link>
   </article>
@@ -155,6 +157,11 @@ body {
   background-color: var(--card-background-color);
   padding: 3rem;
   margin: 5rem;
+}
+
+.infoshieldPayment {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 800px) {

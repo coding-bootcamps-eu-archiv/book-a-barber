@@ -18,9 +18,7 @@
       </table>
 
       <router-link to="/Payment"
-        ><button class="button-next-page">
-          Auswahl bestätigen
-        </button></router-link
+        ><button class="button-next-page">Termin auswählen</button></router-link
       >
     </article>
     <article>
@@ -54,8 +52,6 @@ export default {
 
 <style>
 .button-next-page {
-  position: absolute;
-  bottom: 2rem;
 }
 .class1 {
   height: 100%;

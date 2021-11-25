@@ -1,4 +1,5 @@
 <template>
+  <MultiStepHeader :step="1" />
   <PlzHannover />
 
   <div class="primaryFeature">
@@ -31,6 +32,7 @@
 
 <script>
 import PlzHannover from "@/components/PlzHannover.js";
+import MultiStepHeader from "@/components/MultiStepHeader.vue";
 
 export default {
   name: "Home",
@@ -40,6 +42,9 @@ export default {
       validation: "",
     };
   },
+  components: {
+    MultiStepHeader,
+  },
 
   methods: {
     findPlz() {
@@ -47,8 +52,8 @@ export default {
       if (PlzHannover.includes(plzAsNumber)) {
         this.$router.push("/Services");
       } else {
-        //alert("Sorry, this is not Hannover");
-        this.validation = "Sorry, this is not Hannover";
+        this.validation =
+          "Sorry, wir bieten unseren Service aktuell nur in Hannover an";
       }
     },
   },
@@ -125,12 +130,6 @@ export default {
 }
 button {
   display: block; */
-
-.plzSearch {
-  display: flex;
-  justify-content: center;
-  width: 80%;
-}
 
 h1 {
   width: 100%;

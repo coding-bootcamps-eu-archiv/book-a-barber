@@ -1,4 +1,5 @@
 <template>
+  <MultiStepHeader :step="5" />
   <h1 class="thanks-text">Thanks for the Booking ✅</h1>
 
   <fieldset>
@@ -36,6 +37,7 @@
 
 <script>
 import bookings from "@/components/booking.json";
+import MultiStepHeader from "@/components/MultiStepHeader.vue";
 export default {
   data() {
     return {
@@ -48,6 +50,9 @@ export default {
       city: "",
       phone: "",
     };
+  },
+  components: {
+    MultiStepHeader,
   },
   methods: {
     readFromLocalStorage() {

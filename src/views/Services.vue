@@ -1,6 +1,7 @@
 <template>
+  <MultiStepHeader :step="2" />
   <article class="page-services">
-    <h1>Please choose one from our services!</h1>
+    <h1>Was soll gemacht werden?</h1>
   </article>
 
   <main class="services-layout">
@@ -10,16 +11,15 @@
       :service="service"
     />
   </main>
-  <router-link class="button" to="/Appointments"
-    >Up to looking for a Termin</router-link
-  >
+  <router-link class="button" to="/Appointments">Zur Terminauswahl</router-link>
 </template>
 
 <script>
 import ServiceItem from "@/components/ServiceItem.vue";
 import data from "@/components/data.json";
+import MultiStepHeader from "@/components/MultiStepHeader.vue";
 export default {
-  components: { ServiceItem },
+  components: { ServiceItem, MultiStepHeader },
   data: () => ({
     barberServices: data,
   }),
@@ -45,7 +45,7 @@ body {
 }
 /* "Header" with Sticky-Styling */
 .page-services {
-  background-color: var(--header-color);
+  /* background-color: var(--header-color); */
   padding: 1rem 0;
   opacity: 0.75;
   position: sticky;

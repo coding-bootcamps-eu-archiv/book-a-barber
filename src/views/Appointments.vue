@@ -1,41 +1,41 @@
 <template>
-  <body>
-    <section>
-      <h1>Termin auswählen</h1>
-      <article class="timeSlots">
-        <table v-for="appointment in appointments" :key="appointment.day">
-          <tr>
-            <th class="days">{{ appointment.day }}</th>
-          </tr>
-          <tr
-            @click="chosenAppointment(slot)"
-            v-for="slot in appointment.slots"
-            :key="slot"
-          >
-            <td>
-              {{ slot.time }}
-            </td>
-          </tr>
-        </table>
-      </article>
-
-      <article>
-        <h3 id="chosen-appointment">
-          Dein ausgewählter Termin: {{ this.value }}
-        </h3>
-        <p id="show-chosen-appointment"></p>
-      </article>
-      <article>
-        <router-link to="/Payment"
-          ><button class="button-next-page">Termin buchen</button></router-link
+  <MultiStepHeader :step="3" />
+  <section>
+    <h1>Termin auswählen</h1>
+    <article class="appointments">
+      <table v-for="appointment in appointments" :key="appointment.day">
+        <tr>
+          <th class="days">{{ appointment.day }}</th>
+        </tr>
+        <tr
+          @click="chosenAppointment(slot)"
+          v-for="slot in appointment.slots"
+          :key="slot"
         >
-      </article>
-    </section>
-  </body>
+          <td>
+            {{ slot.time }}
+          </td>
+        </tr>
+      </table>
+    </article>
+
+    <article>
+      <h3 id="chosen-appointment">
+        Dein ausgewählter Termin: {{ this.value }}
+      </h3>
+      <p id="show-chosen-appointment"></p>
+    </article>
+    <article>
+      <router-link to="/Payment"
+        ><button class="button-next-page">Termin buchen</button></router-link
+      >
+    </article>
+  </section>
 </template>
 
 <script>
 import timeSlots from "@/components/appointments.json";
+import MultiStepHeader from "@/components/MultiStepHeader.vue";
 
 export default {
   data() {
@@ -43,6 +43,9 @@ export default {
       appointments: timeSlots,
       value: "",
     };
+  },
+  components: {
+    MultiStepHeader,
   },
   methods: {
     chosenAppointment(slot) {
@@ -55,14 +58,23 @@ export default {
 </script>
 
 <style>
+.appointments {
+  display: block;
+}
 body {
   height: 30rem;
+
   width: 100%;
 }
+
 .timeSlots {
   display: flex;
   justify-content: space-around;
   margin: 0 2rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 25px;
+  opacity: 90%;
 }
 
 tr {
@@ -98,6 +110,7 @@ td:hover {
   background: var(--btn-background-clr);
   border: var(--btn-border);
   padding: var(--btn-padding);
+  border-radius: 25px;
 }
 
 .button-next-page:hover {
@@ -115,6 +128,7 @@ td:hover {
     background: var(--btn-background-clr);
     border: var(--btn-border);
     padding: var(--btn-padding);
+    border-radius: 25px;
   }
 }
 </style>

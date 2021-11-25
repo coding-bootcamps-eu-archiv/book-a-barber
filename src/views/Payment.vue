@@ -59,15 +59,12 @@
           </tr>
         </table>
         <p>
-          {{ bookingdatas.data.service.name }}
-          {{ bookingdatas.data.payment.sum }}
+          {{ this.serviceName }}
+          {{ this.sumPayment }}
         </p>
       </section>
       <button id="btnToSaveToLocalStorage" @click="addToLocalStorage">
         Kundendaten speichern
-      </button>
-      <button id="btnToReadFromLocalStorage" @click="readFromLocalStorage">
-        Auslesen
       </button>
     </article>
     <hr />
@@ -81,16 +78,16 @@ export default {
   data() {
     return {
       surname: "",
+      serviceName: "",
+      sumPayment: "",
       bookingdatas: bookings,
     };
   },
 
   methods: {
     readFromLocalStorage() {
-      this.surname = localStorage.getItem("surname");
-      this.lastname = localStorage.getItem("lastname");
-      console.log("surnameauslocalStorage", this.surname);
-      console.log("surnameauslocalStorage", this.lastname);
+      this.serviceName = localStorage.getItem("serviceName");
+      this.sumPayment = localStorage.getItem("sumPayment");
     },
     addToLocalStorage() {
       const inpSurname = document.getElementById("surname");
@@ -121,6 +118,9 @@ export default {
       localStorage.setItem("city", city);
       localStorage.setItem("phone", phone);
     },
+  },
+  created() {
+    this.readFromLocalStorage();
   },
 };
 </script>

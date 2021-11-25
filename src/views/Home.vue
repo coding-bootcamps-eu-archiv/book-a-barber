@@ -16,7 +16,7 @@
         />
 
         <router-link to="/Services"> </router-link
-        ><button @click="findPlz()">Search</button>
+        ><button class="searchBtn" @click="findPlz()">Search</button>
         <div class="overlay" v-if="validation">
           <div class="validationTxt">
             {{ validation }}
@@ -81,6 +81,7 @@ export default {
   color: white;
   margin: 0;
   width: 100%;
+  height: 100%;
 }
 
 .overlay {
@@ -111,12 +112,13 @@ export default {
 }
 
 .validBtn {
-  display: flex;
-  position: absolute;
+  position: relative;
   align-self: flex-end;
-  background: rgb(181, 181, 181);
-  border: rgb(131, 131, 131) solid 2px;
+
   padding: 0.3rem 0.6rem;
+  background: var(--btn-background-clr);
+  border: var(--btn-border);
+  border-radius: 25px;
 }
 
 .validBtn:hover {
@@ -136,6 +138,12 @@ h1 {
   justify-content: left;
 }
 
+.searchBtn {
+  background: var(--btn-background-clr);
+  border: var(--btn-border);
+  border-radius: 25px;
+}
+
 @media screen and (min-width: 768px) {
   .primaryFeature {
     display: flex;
@@ -143,7 +151,7 @@ h1 {
     justify-content: center;
     background-image: url("https://baerte.info/wp-content/uploads/2019/06/barber.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: content;
     margin: auto;
     min-width: 70vw;
     min-height: 60vw;

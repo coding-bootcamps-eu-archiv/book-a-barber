@@ -1,6 +1,6 @@
 <template>
   <article class="page-services">
-    <h1>Please choose from our services!</h1>
+    <h1>Please choose one from our services!</h1>
   </article>
 
   <main class="services-layout">

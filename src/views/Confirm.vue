@@ -22,12 +22,16 @@
         <p>Tag: {{ this.appointmentDay }}</p>
         <p>Uhrzeit: {{ this.appointmentTime }}</p>
         <h3>Bezahlung:</h3>
-
         <p>Summe: {{ this.sumPayment }}</p>
       </section>
     </article>
   </fieldset>
-  <router-link to="/">Back to Start</router-link>
+  <router-link
+    id="btnToClearLocalStorage"
+    @click="clearDatasOfLocalStorage()"
+    to="/"
+    >Back to Start</router-link
+  >
 </template>
 
 <script>
@@ -40,6 +44,9 @@ export default {
       lastname: "",
       email: "",
       streetnr: "",
+      plz: "",
+      city: "",
+      phone: "",
     };
   },
   methods: {
@@ -61,7 +68,11 @@ export default {
 
       /*console.log("surnameauslocalStorage", this.surname);*/
     },
+    clearDatasOfLocalStorage() {
+      localStorage.clear();
+    },
   },
+
   created() {
     this.readFromLocalStorage();
   },

@@ -7,11 +7,7 @@
     <ServiceItem
       v-for="service in barberServices"
       :key="service"
-      :title="service.title"
-      :description="service.description"
-      :duration="service.duration"
-      :price="service.price"
-      :avatar="service.avatar"
+      :service="service"
     />
   </main>
   <router-link class="button" to="/Appointments"

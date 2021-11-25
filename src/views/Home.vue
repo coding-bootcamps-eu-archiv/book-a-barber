@@ -131,12 +131,6 @@ export default {
 button {
   display: block; */
 
-.plzSearch {
-  display: flex;
-  justify-content: center;
-  width: 80%;
-}
-
 h1 {
   width: 100%;
   justify-content: left;

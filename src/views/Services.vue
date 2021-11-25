@@ -45,7 +45,7 @@ body {
 }
 /* "Header" with Sticky-Styling */
 .page-services {
-  background-color: var(--header-color);
+  /* background-color: var(--header-color); */
   padding: 1rem 0;
   opacity: 0.75;
   position: sticky;
@@ -65,7 +65,7 @@ body {
   align-items: center;
   flex-direction: column;
   margin: 0;
-  background-color: var(--body-background-color);
+  /* background-color: var(--body-background-color); */
 }
 
 .shipping-layout {

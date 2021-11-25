@@ -2,26 +2,7 @@
   <MultiStepHeader :step="3" />
   <section>
     <h1>Termin auswählen</h1>
-    <article class="class1">
-      <table v-for="appointment in appointments" :key="appointment.day">
-        <tr>
-          <th class="days">{{ appointment.day }}</th>
-        </tr>
-        <tr
-          @click="chosenAppointment(slot)"
-          v-for="slot in appointment.slots"
-          :key="slot"
-        >
-          <td>
-            {{ slot.time }}
-          </td>
-        </tr>
-      </table>
-    </article>
-  </section>
-  <section>
-    <h1>Termin auswählen</h1>
-    <article class="timeSlots">
+    <article class="appointments">
       <table v-for="appointment in appointments" :key="appointment.day">
         <tr>
           <th class="days">{{ appointment.day }}</th>
@@ -77,14 +58,15 @@ export default {
 </script>
 
 <style>
-.class1 {
-  height: 100%;
-  body {
-    height: 30rem;
-
-    width: 100%;
-  }
+.appointments {
+  display: block;
 }
+body {
+  height: 30rem;
+
+  width: 100%;
+}
+
 .timeSlots {
   display: flex;
   justify-content: space-around;

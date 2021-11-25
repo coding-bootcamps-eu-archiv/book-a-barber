@@ -1,17 +1,13 @@
 <template>
   <article class="page-services">
-    <h1>Please choose from our services!</h1>
+    <h1>Please choose one from our services!</h1>
   </article>
 
   <main class="services-layout">
     <ServiceItem
       v-for="service in barberServices"
       :key="service"
-      :title="service.title"
-      :description="service.description"
-      :duration="service.duration"
-      :price="service.price"
-      :avatar="service.avatar"
+      :service="service"
     />
   </main>
   <router-link class="button" to="/Appointments"
@@ -89,6 +85,7 @@ body {
   }
   .shipping-layout {
     width: 30vw;
+    padding: 0;
   }
 }
 .img-wrapper {

@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "title": "Haircut123",
+    "title": "Haircut",
     "avatar": "pic-hair",
-    "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
+    "description": "Kontur & Kranz oder kompletter Maschinenschnitt inkl. eines Haarbades",
     "duration": "20min",
     "price": "35"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "Barber",
     "avatar": "pic-barber",
-    "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
+    "description": "Vollbart schnitt, Konturen Rasur und Styling. Bei Bedarf Flaumhaarentfernung mit heißem Wachs.",
     "duration": "20min",
     "price": "40"
   },
@@ -19,23 +19,7 @@
     "id": 3,
     "title": "All in One",
     "avatar": "pic-all-in-one",
-    "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
-    "duration": "45min",
-    "price": "65"
-  },
-  {
-    "id": 4,
-    "title": "Acqua di Parma",
-    "avatar": "pic-acqua",
-    "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
-    "duration": "45min",
-    "price": "65"
-  },
-  {
-    "id": 5,
-    "title": "Old Lumbermill's",
-    "avatar": "pic-pumbermills",
-    "description": "jQuery (auch jQuery Core) ist eine freie JavaScript-Bibliothek, die Funktionen zur DOM-Navigation und -Manipulation zur Verfügung stellt.",
+    "description": "Haarschnitt und styling + 2x waschen, Perfekt für alle denen der Schnauzer über die Oberlippe hängt oder der drei Tage Bart wieder eine form braucht.",
     "duration": "45min",
     "price": "65"
   }

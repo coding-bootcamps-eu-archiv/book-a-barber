@@ -1,7 +1,7 @@
 <template>
   <MultiStepHeader :step="2" />
   <article class="page-services">
-    <h1>Please choose one from our services!</h1>
+    <h1>Was soll gemacht werden?</h1>
   </article>
 
   <main class="services-layout">
@@ -11,9 +11,7 @@
       :service="service"
     />
   </main>
-  <router-link class="button" to="/Appointments"
-    >Up to looking for a Termin</router-link
-  >
+  <router-link class="button" to="/Appointments">Zur Terminauswahl</router-link>
 </template>
 
 <script>

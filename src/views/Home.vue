@@ -52,8 +52,8 @@ export default {
       if (PlzHannover.includes(plzAsNumber)) {
         this.$router.push("/Services");
       } else {
-        //alert("Sorry, this is not Hannover");
-        this.validation = "Sorry, this is not Hannover";
+        this.validation =
+          "Sorry, wir bieten unseren Service aktuell nur in Hannover an";
       }
     },
   },

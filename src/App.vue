@@ -1,15 +1,29 @@
 <template>
+  <header class="nav-leiste">
+    <nav><router-link to="/">Home</router-link></nav>
+    <nav><router-link to="/Services">Services</router-link></nav>
+    <nav><router-link to="/Appointments">Appointments</router-link></nav>
+    <nav><router-link to="/Payment">Payment</router-link></nav>
+    <img id="logo" src="@/images/bookabarberlogo.png" alt="" />
+  </header>
   <router-view />
 
-  <footer>©Enricco Carruba</footer>
+  <footer>©Enrico Carruba</footer>
 </template>
 
 <style>
+html {
+  --btn-background-clr: rgb(181, 181, 181);
+  --btn-border: rgb(131, 131, 131) solid 2px;
+  --btn-padding: 0.3rem 0.6rem;
+  --btn-hover-clr: rgb(131, 131, 131);
+}
+
 .nav-leiste {
   display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: rgb(189, 135, 97);
+  height: 5rem;
+  justify-content: center;
 }
 
 #app {
@@ -18,6 +32,24 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  position: relative;
+}
+
+#app:after {
+  content: " ";
+  position: absolute;
+  background-image: url("https://baerte.info/wp-content/uploads/2019/06/barber.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 50%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 
 nav {
@@ -31,5 +63,13 @@ nav a {
 
 nav a.router-link-exact-active {
   color: rgb(252, 231, 215);
+}
+
+#logo {
+  width: 20rem;
+  height: 5rem;
+}
+
+@media screen and (min-width: 768px) {
 }
 </style>

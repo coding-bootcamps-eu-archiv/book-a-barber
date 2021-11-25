@@ -17,18 +17,40 @@
           </td>
         </tr>
       </table>
+  <body>
+    <section>
+      <h1>Termin auswählen</h1>
+      <article class="timeSlots">
+        <table v-for="appointment in appointments" :key="appointment.day">
+          <tr>
+            <th class="days">{{ appointment.day }}</th>
+          </tr>
+          <tr
+            @click="chosenAppointment(slot)"
+            v-for="slot in appointment.slots"
+            :key="slot"
+          >
+            <td>
+              {{ slot.time }}
+            </td>
+          </tr>
+        </table>
+      </article>
 
-      <router-link to="/Payment"
-        ><button class="button-next-page">Termin auswählen</button></router-link
-      >
-    </article>
-    <article>
-      <h3 id="chosen-appointment">
-        Dein ausgewählter Termin: {{ this.value }}
-      </h3>
-      <p id="show-chosen-appointment"></p>
-    </article>
-  </section>
+
+      <article>
+        <h3 id="chosen-appointment">
+          Dein ausgewählter Termin: {{ this.value }}
+        </h3>
+        <p id="show-chosen-appointment"></p>
+      </article>
+      <article>
+        <router-link to="/Payment"
+          ><button class="button-next-page">Termin buchen</button></router-link
+        >
+      </article>
+    </section>
+  </body>
 </template>
 
 <script>
@@ -58,10 +80,15 @@ export default {
 <style>
 .class1 {
   height: 100%;
+body {
+  height: 30rem;
+
   width: 100%;
+}
+.timeSlots {
   display: flex;
   justify-content: space-around;
-  margin-left: 2rem;
+  margin: 0 2rem;
 }
 
 tr {
@@ -85,5 +112,35 @@ tr {
 
 td:hover {
   background-color: lightgrey;
+}
+
+.section {
+  height: 500px;
+}
+
+.button-next-page {
+  position: relative;
+  margin-top: 3rem;
+  background: var(--btn-background-clr);
+  border: var(--btn-border);
+  padding: var(--btn-padding);
+}
+
+.button-next-page:hover {
+  background-color: var(--btn-hover-clr);
+}
+
+@media (max-width: 600px) {
+  .timeSlots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .button-next-page {
+    position: relative;
+    margin-top: 1rem;
+    background: var(--btn-background-clr);
+    border: var(--btn-border);
+    padding: var(--btn-padding);
+  }
 }
 </style>

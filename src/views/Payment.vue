@@ -1,4 +1,5 @@
 <template>
+  <MultiStepHeader :step="4" />
   <article>
     <h1>I will give Shine to you, give me your Money</h1>
 
@@ -76,6 +77,7 @@
 
 <script>
 import bookings from "@/components/booking.json";
+import MultiStepHeader from "@/components/MultiStepHeader.vue";
 export default {
   data() {
     return {
@@ -85,7 +87,9 @@ export default {
       bookingdatas: bookings,
     };
   },
-
+  components: {
+    MultiStepHeader,
+  },
   methods: {
     readFromLocalStorage() {
       this.serviceName = localStorage.getItem("serviceName");

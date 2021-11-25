@@ -1,10 +1,4 @@
 <template>
-  <header class="nav-leiste">
-    <nav><router-link to="/">Home</router-link></nav>
-    <nav><router-link to="/Services">Services</router-link></nav>
-    <nav><router-link to="/Appointments">Appointments</router-link></nav>
-    <nav><router-link to="/Payment">Payment</router-link></nav>
-  </header>
   <router-view />
 
   <footer>©Enricco Carruba</footer>

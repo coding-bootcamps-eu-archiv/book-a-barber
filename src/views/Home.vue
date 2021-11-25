@@ -1,4 +1,5 @@
 <template>
+  <MultiStepHeader :step="1" />
   <PlzHannover />
 
   <div class="primaryFeature">
@@ -31,6 +32,7 @@
 
 <script>
 import PlzHannover from "@/components/PlzHannover.js";
+import MultiStepHeader from "@/components/MultiStepHeader.vue";
 
 export default {
   name: "Home",
@@ -39,6 +41,9 @@ export default {
       postcode: "",
       validation: "",
     };
+  },
+  components: {
+    MultiStepHeader,
   },
 
   methods: {

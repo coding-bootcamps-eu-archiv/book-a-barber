@@ -1,4 +1,5 @@
 <template>
+  <MultiStepHeader :step="3" />
   <section>
     <h1>Termin auswählen</h1>
     <article class="class1">
@@ -32,6 +33,7 @@
 
 <script>
 import timeSlots from "@/components/appointments.json";
+import MultiStepHeader from "@/components/MultiStepHeader.vue";
 
 export default {
   data() {
@@ -39,6 +41,9 @@ export default {
       appointments: timeSlots,
       value: "",
     };
+  },
+  components: {
+    MultiStepHeader,
   },
   methods: {
     chosenAppointment(slot) {
@@ -51,8 +56,6 @@ export default {
 </script>
 
 <style>
-.button-next-page {
-}
 .class1 {
   height: 100%;
   width: 100%;

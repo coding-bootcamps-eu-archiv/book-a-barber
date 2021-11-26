@@ -29,18 +29,18 @@
     </fieldset>
   </main>
 
-  <router-link
+  <!-- <router-link
     id="btnToClearLocalStorage"
     @click="clearDatasOfLocalStorage()"
     to="/"
     >Back to Start</router-link
-  >
-  <fieldset>
+  > -->
+  <!-- <fieldset>
     <legend><h2>Bestellübersicht</h2></legend>
     <article class="order">
       <section class="data-customer">
         <h3>Kunde:</h3>
-        <!--<p>Vorname: {{ data.adress.surname }}</p>-->
+
         <p>Vorname: {{ this.surname }}</p>
         <p>Nachname: {{ this.lastname }}</p>
         <p>E-Mail: {{ this.emailcost }}</p>
@@ -59,9 +59,9 @@
         <p>Summe: {{ this.sumPayment }}</p>
       </section>
     </article>
-  </fieldset>
+  </fieldset> -->
   <router-link to="/"
-    ><button @click="clearDatasOfLocalStorage()">
+    ><button class="backHomeBtn" @click="clearDatasOfLocalStorage()">
       Zurück zur Startseite
     </button></router-link
   >
@@ -151,16 +151,47 @@ fieldset {
 }*/
 
 .data-customer {
-  background-color: darkgray;
+  /* background-color: var(--btn-hover-clr);
   width: 100%;
   padding-left: 1rem;
+  border-radius: 25px;
+  border: var(--btn-border); */
+  background-color: var(--btn-hover-clr);
+  padding: 3rem;
+  margin: 2rem auto 1rem auto;
+
+  opacity: 90%;
+  max-width: 300px;
+  border-radius: 10%;
 }
 
 .data-payment {
-  background-color: aqua;
+  /* background-color: var(--btn-hover-clr);
   width: 100%;
   padding-left: 1rem;
+  border-radius: 25px;
+  border: var(--btn-border); */
+  background-color: var(--btn-hover-clr);
+  padding: 3rem;
+  margin: 1rem auto 2rem auto;
+
+  opacity: 90%;
+  max-width: 300px;
+  border-radius: 10%;
 }
+
+.backHomeBtn {
+  background: var(--btn-background-clr);
+  border: var(--btn-border);
+  padding: var(--btn-padding);
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.backHomeBtn:hover {
+  background-color: var(--btn-hover-clr);
+}
+
 @media screen and (min-width: 800px) {
   .order {
     display: flex;
@@ -170,10 +201,12 @@ fieldset {
   }
   .data-customer {
     width: 50%;
+    margin: 2rem 1rem 2rem 2rem;
   }
 
   .data-payment {
     width: 50%;
+    margin: 2rem 2rem 2rem 1rem;
   }
 }
 </style>

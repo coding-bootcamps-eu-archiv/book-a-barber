@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Haircut",
+    "title": "Haarschnitt",
     "avatar": "pic-hair",
     "description": "Kontur & Kranz oder kompletter Maschinenschnitt inkl. eines Haarbades",
     "duration": "20min",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "title": "Barber",
+    "title": "Bartschnitt",
     "avatar": "pic-barber",
     "description": "Vollbart Schnitt, Rasur und Styling. Bei Bedarf Behandlungung mit heißem Wachs.",
     "duration": "20min",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "title": "All in One",
+    "title": "Haare- und Bart",
     "avatar": "pic-all-in-one",
     "description": "Haarschnitt und Bartstyling, perfekt für alle wo drei Tage Bart wieder eine Form braucht.",
     "duration": "45min",

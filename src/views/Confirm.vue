@@ -1,6 +1,6 @@
 <template>
   <MultiStepHeader :step="5" />
-  <h1 class="thanks-text">Thanks for the Booking ✅</h1>
+  <h1 class="thanks-text">Terminbuchung erfolgreich ✅</h1>
 
   <fieldset>
     <legend><h2>Bestellübersicht</h2></legend>
@@ -27,11 +27,10 @@
       </section>
     </article>
   </fieldset>
-  <router-link
-    id="btnToClearLocalStorage"
-    @click="clearDatasOfLocalStorage()"
-    to="/"
-    >Back to Start</router-link
+  <router-link to="/"
+    ><button @click="clearDatasOfLocalStorage()">
+      Zurück zur Startseite
+    </button></router-link
   >
 </template>
 
@@ -63,6 +62,7 @@ export default {
       this.plz = localStorage.getItem("plz");
       this.city = localStorage.getItem("city");
       this.phone = localStorage.getItem("phone");
+
       /* Datas from Enrico*/
       this.appointmentDay = localStorage.getItem("appointmentDay");
       this.appointmentTime = localStorage.getItem("appointmentTime");
@@ -70,8 +70,6 @@ export default {
       /* Datas from Services*/
       this.serviceName = localStorage.getItem("serviceName");
       this.sumPayment = localStorage.getItem("sumPayment");
-
-      /*console.log("surnameauslocalStorage", this.surname);*/
     },
     clearDatasOfLocalStorage() {
       localStorage.clear();

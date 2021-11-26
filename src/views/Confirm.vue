@@ -34,7 +34,7 @@
     @click="clearDatasOfLocalStorage()"
     to="/"
     >Back to Start</router-link
-=======
+  >
   <fieldset>
     <legend><h2>Bestellübersicht</h2></legend>
     <article class="order">

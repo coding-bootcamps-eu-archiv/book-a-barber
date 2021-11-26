@@ -1,7 +1,40 @@
 <template>
   <MultiStepHeader :step="5" />
   <h1 class="thanks-text">Terminbuchung erfolgreich ✅</h1>
+  <main class="confirming">
+    <fieldset>
+      <legend><h2>Bestellübersicht</h2></legend>
+      <article class="order">
+        <section class="data-customer">
+          <h3>Kunde:</h3>
+          <!--<p>Vorname: {{ data.adress.surname }}</p>-->
+          <p>Vorname: {{ this.surname }}</p>
+          <p>Nachname: {{ this.lastname }}</p>
+          <p>E-Mail: {{ this.emailcost }}</p>
+          <p>Strasse, HsNr.: {{ this.street }}</p>
+          <p>PLZ: {{ this.plz }}</p>
+          <p>Stadt: {{ this.city }}</p>
+          <p>Handy: {{ this.phone }}</p>
+        </section>
+        <section class="data-payment">
+          <h3>Leistung:</h3>
+          <p>Bezeichnung: {{ this.serviceName }}</p>
+          <h3>Datum:</h3>
+          <p>Tag: {{ this.appointmentDay }}</p>
+          <p>Uhrzeit: {{ this.appointmentTime }}</p>
+          <h3>Bezahlung:</h3>
+          <p>Summe: {{ this.sumPayment }}</p>
+        </section>
+      </article>
+    </fieldset>
+  </main>
 
+  <router-link
+    id="btnToClearLocalStorage"
+    @click="clearDatasOfLocalStorage()"
+    to="/"
+    >Back to Start</router-link
+=======
   <fieldset>
     <legend><h2>Bestellübersicht</h2></legend>
     <article class="order">
@@ -83,6 +116,10 @@ export default {
 </script>
 
 <style>
+.confirming {
+  display: flex;
+  justify-content: center;
+}
 .thanks-text {
   padding: 1rem;
   border-radius: 0.5rem;

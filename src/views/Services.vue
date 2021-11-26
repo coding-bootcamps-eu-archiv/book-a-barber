@@ -75,7 +75,7 @@ body {
 @media screen and (min-width: 800px) {
   .services-layout {
     display: grid;
-    width: 100vw;
+    width: 90vw;
     grid-template-columns: 1fr 1fr 1fr;
   }
   .shipping-layout {

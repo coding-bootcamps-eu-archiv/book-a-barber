@@ -6,7 +6,7 @@
       <legend><h2>Bestellübersicht</h2></legend>
       <article class="order">
         <section class="data-customer">
-          <h3>Kunde:</h3>
+          <h3>Meine Daten:</h3>
           <!--<p>Vorname: {{ data.adress.surname }}</p>-->
           <p>Vorname: {{ this.surname }}</p>
           <p>Nachname: {{ this.lastname }}</p>

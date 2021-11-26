@@ -46,14 +46,15 @@ body {
 
 .page-services {
   padding: 1rem 0;
-  opacity: 0.75;
-  position: sticky;
+
+  _position: sticky;
   top: 0;
-  z-index: 2;
+  _z-index: 2;
 }
 
 .services-layout {
   display: flex;
+  position: relative;
   align-items: center;
   flex-direction: column;
   margin: 0;
@@ -62,6 +63,7 @@ body {
 
 .shipping-layout {
   display: flex;
+
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -70,6 +72,10 @@ body {
 
   border-radius: 1rem;
   margin: 1.5rem;
+}
+
+.button {
+  margin-top: 2rem;
 }
 
 @media screen and (min-width: 800px) {

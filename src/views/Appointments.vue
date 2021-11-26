@@ -84,6 +84,8 @@ tr {
 
 .appointments {
   list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
 .days {

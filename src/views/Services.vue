@@ -46,14 +46,12 @@ body {
 
 .page-services {
   padding: 1rem 0;
-  opacity: 0.75;
-  position: sticky;
   top: 0;
-  z-index: 2;
 }
 
 .services-layout {
   display: flex;
+  position: relative;
   align-items: center;
   flex-direction: column;
   margin: 0;
@@ -67,9 +65,12 @@ body {
   flex-direction: column;
   background-color: snow;
   width: 50vw;
-
   border-radius: 1rem;
   margin: 1.5rem;
+}
+
+.button {
+  margin-top: 2rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -175,15 +176,9 @@ img {
   border-radius: 0.25rem;
 }
 
-/* Button to the next episode */
 .button {
   background: var(--btn-background-clr);
   border: var(--btn-border);
   border-radius: 25px;
-  /* padding: 0.25rem;
-  border: 2px solid var(--border-color);
-  border-radius: 0.25rem;
-  background-color: var(--body-background-color);
-  margin-bottom: 5rem; */
 }
 </style>

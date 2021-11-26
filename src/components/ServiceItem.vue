@@ -10,6 +10,7 @@
       <h2 id="title">{{ service.title }}</h2>
       <p>{{ service.description }}</p>
     </section>
+    <br />
     <section class="box-shopping">
       <label id="servicePrice" class="price"
         >Preis: € {{ service.price }}
@@ -45,4 +46,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@media screen and (max-width: 400px) {
+  .shipping-layout {
+    display: flex;
+    position: relative;
+  }
+  .box-shopping {
+    position: relative;
+    margin-top: 5rem;
+  }
+}
+</style>

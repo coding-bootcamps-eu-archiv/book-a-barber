@@ -41,7 +41,7 @@ body {
   --border-color: black;
   --body-background-color: darkgoldenrod;
   --card-background-color: blanchedalmond;
-  --buying-area-bg-color: white;
+  --buying-area-bg-color: lightslategray;
 }
 /* "Header" with Sticky-Styling */
 .page-services {
@@ -52,20 +52,13 @@ body {
   top: 0;
   z-index: 2;
 }
-/* Button to the next episode */
-.button {
-  padding: 0.25rem;
-  border: 2px solid var(--border-color);
-  border-radius: 0.25rem;
-  background-color: var(--body-background-color);
-}
 
 .services-layout {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 0;
-  /* background-color: var(--body-background-color); */
+  background-color: transparent;
 }
 
 .shipping-layout {
@@ -73,28 +66,42 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--card-background-color);
+  background-color: snow;
   width: 50vw;
+
   border-radius: 1rem;
   margin: 1.5rem;
 }
+
 @media screen and (min-width: 800px) {
   .services-layout {
     display: grid;
+    width: 100vw;
     grid-template-columns: 1fr 1fr 1fr;
   }
   .shipping-layout {
     width: 30vw;
     padding: 0;
   }
+  .shipping-layout + .shipping-layout {
+    margin: 1rem;
+  }
 }
 .img-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48vw;
-  height: 48vw;
+  width: 50vw;
+  height: 50vw;
 }
+@media screen and (min-width: 800px) {
+  .img-wrapper {
+    width: 30%;
+    height: 30%;
+    margin-top: 0;
+  }
+}
+
 .frame-image {
   position: relative;
   margin: 0;
@@ -103,9 +110,9 @@ body {
 .shipping-stamp {
   font-size: 0.75rem;
   position: absolute;
-  background-color: var(--buying-area-bg-color);
+  background-color: var(--header-color);
   border-radius: 0.2rem;
-  opacity: 0.5;
+  opacity: 0.4;
   width: 12ch;
   padding: 0.2rem 0.2rem 0.2rem 0.2rem;
   top: 1rem;
@@ -133,28 +140,48 @@ img {
 .description {
   padding: 0 1rem;
   text-align: left;
+  height: 20vw;
 }
 .box-shopping {
-  margin: 0.5rem;
-  background-color: var(--buying-area-bg-color);
+  width: 90%;
+  margin: 1rem 0.5rem 0.5rem 0.5rem;
+  background-color: lightgrey;
   border-radius: 0.5rem;
-  height: 8vh;
+  height: 12vh;
   display: grid;
+  padding: 1rem;
   grid-template-areas:
-    "price btn-buy"
-    "duration btn-buy";
+    "price duration"
+    "btn-buy btn-buy";
+  gap: 1rem;
 }
 .price {
   grid-area: price;
-  background-color: blue;
+  color: black;
+  background-color: snow;
+  border-radius: 0.25rem;
+  width: 100%;
 }
 .duration {
   grid-area: duration;
-  background-color: yellow;
+  color: black;
+  background-color: snow;
+  border-radius: 0.25rem;
+  width: 100%;
 }
 .adding {
   grid-area: btn-buy;
+  color: white;
+  background-color: blue;
+  border-radius: 0.25rem;
+}
 
-  background-color: red;
+/* Button to the next episode */
+.button {
+  padding: 0.25rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.25rem;
+  background-color: var(--body-background-color);
+  margin-bottom: 5rem;
 }
 </style>

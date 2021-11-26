@@ -7,38 +7,38 @@
   <header class="nav-leiste">
     <nav :class="getActiveClass(1)" class="navVisibility">
       <router-link v-if="isStepActive(1)" to="/"
-        ><i class="fa fa-home" style="font-size: 24px"></i
+        ><i class="fa fa-home" style="font-size: 20px"></i
       ></router-link>
-      <span v-else><i class="fa fa-home" style="font-size: 24px"></i></span>
+      <span v-else><i class="fa fa-home" style="font-size: 20px"></i></span>
     </nav>
-    <nav :class="getActiveClass(2)">
+    <nav :class="getActiveClass(2)" class="navVisibility">
       <router-link v-if="isStepActive(2)" to="/Services"
-        ><i class="fa fa-cart-plus" style="font-size: 24px"></i
+        ><i class="fa fa-cart-plus" style="font-size: 20px"></i
       ></router-link>
       <span v-else
-        ><i class="fa fa-cart-plus" style="font-size: 24px"></i
+        ><i class="fa fa-cart-plus" style="font-size: 20px"></i
       ></span>
     </nav>
-    <nav :class="getActiveClass(3)">
+    <nav :class="getActiveClass(3)" class="navVisibility">
       <router-link v-if="isStepActive(3)" to="/Appointments"
-        ><i class="fa fa-calendar" style="font-size: 24px"></i
+        ><i class="fa fa-calendar" style="font-size: 20px"></i
       ></router-link>
-      <span v-else><i class="fa fa-calendar" style="font-size: 24px"></i></span>
+      <span v-else><i class="fa fa-calendar" style="font-size: 20px"></i></span>
     </nav>
-    <nav :class="getActiveClass(4)">
+    <nav :class="getActiveClass(4)" class="navVisibility">
       <router-link v-if="isStepActive(4)" to="/Payment"
-        ><i class="fa fa-drivers-license-o" style="font-size: 24px"></i
+        ><i class="fa fa-drivers-license-o" style="font-size: 20px"></i
       ></router-link>
       <span v-else
-        ><i class="fa fa-drivers-license-o" style="font-size: 24px"></i
+        ><i class="fa fa-drivers-license-o" style="font-size: 20px"></i
       ></span>
     </nav>
-    <nav :class="getActiveClass(5)">
+    <nav :class="getActiveClass(5)" class="navVisibility">
       <router-link v-if="isStepActive(5)" to="/"
-        ><i class="fa fa-handshake-o" style="font-size: 24px"></i
+        ><i class="fa fa-handshake-o" style="font-size: 20px"></i
       ></router-link>
       <span v-else
-        ><i class="fa fa-handshake-o" style="font-size: 24px"></i
+        ><i class="fa fa-handshake-o" style="font-size: 20px"></i
       ></span>
     </nav>
   </header>
@@ -96,6 +96,8 @@ nav a.router-link-exact-active {
 }
 
 .navVisibility {
-  display: none;
+  justify-content: space-evenly;
+  margin: auto;
+  padding: 1rem;
 }
 </style>

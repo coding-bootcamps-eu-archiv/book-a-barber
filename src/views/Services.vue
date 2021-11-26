@@ -154,6 +154,7 @@ img {
     "price duration"
     "btn-buy btn-buy";
   gap: 1rem;
+  margin-top: 10rem;
 }
 .price {
   grid-area: price;

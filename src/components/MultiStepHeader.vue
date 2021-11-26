@@ -60,7 +60,6 @@ export default {
   },
   methods: {
     isStepActive(minStep) {
-      console.log(this.currentStep >= minStep);
       return this.currentStep >= minStep;
     },
     getActiveClass(step) {

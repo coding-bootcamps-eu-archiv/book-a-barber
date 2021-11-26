@@ -21,7 +21,7 @@
         @click="addToLocalStorage(service)"
         class="adding"
       >
-        Hinzufügen
+        auswählen
       </button>
     </section>
   </article>

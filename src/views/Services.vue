@@ -175,7 +175,9 @@ img {
   background-color: blue;
   border-radius: 0.25rem;
 }
-
+.adding:focus {
+  background-color: rosybrown;
+}
 .button {
   background: var(--btn-background-clr);
   border: var(--btn-border);

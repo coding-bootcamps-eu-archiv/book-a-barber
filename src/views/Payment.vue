@@ -176,7 +176,7 @@ body {
 .customer-datas {
   background-color: var(--btn-hover-clr);
   padding: 3rem;
-  margin: 5rem auto 2.5rem auto;
+  margin: 5rem auto 1.5rem auto;
   opacity: 90%;
   max-width: 240px;
   border-radius: 10%;
@@ -185,7 +185,7 @@ body {
 .customer-payment {
   background-color: var(--btn-hover-clr);
   padding: 3rem;
-  margin: 2.5rem auto 5rem auto;
+  margin: 1.5rem auto 5rem auto;
   opacity: 90%;
   max-width: 240px;
   border-radius: 10%;
@@ -199,6 +199,18 @@ body {
 input {
   border-radius: 25px;
   padding-left: 0.3rem;
+}
+
+.btnToPay {
+  background: var(--btn-background-clr);
+  border: var(--btn-border);
+  padding: var(--btn-padding);
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.btnToPay:hover {
+  background-color: var(--btn-hover-clr);
 }
 
 @media screen and (min-width: 600px) {
@@ -230,23 +242,11 @@ input {
   }
 }
 
-#btnToSaveToLocalStorage {
-  background: var(--btn-background-clr);
-  border: var(--btn-border);
-  padding: var(--btn-padding);
-  margin: 0 auto;
-  border-radius: 25px;
-}
-
-#btnToSaveToLocalStorage:hover {
-  background-color: var(--btn-hover-clr);
-}
-
 .btnToPay {
   background: var(--btn-background-clr);
   border: var(--btn-border);
   padding: var(--btn-padding);
-  margin: 1rem auto;
+  margin: 0 auto;
   border-radius: 25px;
 }
 

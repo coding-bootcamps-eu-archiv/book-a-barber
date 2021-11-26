@@ -5,7 +5,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
   <header class="nav-leiste">
-    <nav :class="getActiveClass(1)">
+    <nav :class="getActiveClass(1)" class="navVisibility">
       <router-link v-if="isStepActive(1)" to="/"
         ><i class="fa fa-home" style="font-size: 24px"></i
       ></router-link>
@@ -93,5 +93,9 @@ nav a {
 
 nav a.router-link-exact-active {
   color: rgb(252, 231, 215);
+}
+
+.navVisibility {
+  display: none;
 }
 </style>

@@ -29,37 +29,6 @@
     </fieldset>
   </main>
 
-  <!-- <router-link
-    id="btnToClearLocalStorage"
-    @click="clearDatasOfLocalStorage()"
-    to="/"
-    >Back to Start</router-link
-  > -->
-  <!-- <fieldset>
-    <legend><h2>Bestellübersicht</h2></legend>
-    <article class="order">
-      <section class="data-customer">
-        <h3>Kunde:</h3>
-
-        <p>Vorname: {{ this.surname }}</p>
-        <p>Nachname: {{ this.lastname }}</p>
-        <p>E-Mail: {{ this.emailcost }}</p>
-        <p>Strasse, HsNr.: {{ this.street }}</p>
-        <p>PLZ: {{ this.plz }}</p>
-        <p>Stadt: {{ this.city }}</p>
-        <p>Handy: {{ this.phone }}</p>
-      </section>
-      <section class="data-payment">
-        <h3>Leistung:</h3>
-        <p>Bezeichnung: {{ this.serviceName }}</p>
-        <h3>Datum:</h3>
-        <p>Tag: {{ this.appointmentDay }}</p>
-        <p>Uhrzeit: {{ this.appointmentTime }}</p>
-        <h3>Bezahlung:</h3>
-        <p>Summe: {{ this.sumPayment }}</p>
-      </section>
-    </article>
-  </fieldset> -->
   <router-link to="/"
     ><button class="backHomeBtn" @click="clearDatasOfLocalStorage()">
       Zurück zur Startseite
@@ -138,43 +107,20 @@ fieldset {
   width: 80vw;
   text-align: left;
 }
-/*.order {
-  margin: auto;
-  border: 2px solid grey;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  width: 80vw;
-  text-align: left;
-   
-}*/
 
 .data-customer {
-  /* background-color: var(--btn-hover-clr);
-  width: 100%;
-  padding-left: 1rem;
-  border-radius: 25px;
-  border: var(--btn-border); */
   background-color: var(--btn-hover-clr);
   padding: 3rem;
   margin: 2rem auto 1rem auto;
-
   opacity: 90%;
   max-width: 300px;
   border-radius: 10%;
 }
 
 .data-payment {
-  /* background-color: var(--btn-hover-clr);
-  width: 100%;
-  padding-left: 1rem;
-  border-radius: 25px;
-  border: var(--btn-border); */
   background-color: var(--btn-hover-clr);
   padding: 3rem;
   margin: 1rem auto 2rem auto;
-
   opacity: 90%;
   max-width: 300px;
   border-radius: 10%;

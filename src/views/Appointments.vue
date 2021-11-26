@@ -86,6 +86,8 @@ tr {
   display: flex;
   justify-content: center;
   list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
 .days {

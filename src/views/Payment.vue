@@ -2,13 +2,13 @@
   <MultiStepHeader :step="4" />
   <article>
     <br />
-    <h1>I will give Shine to you, give me your Money</h1>
+    <h1>Bitte vervollständige Deine Daten:</h1>
 
     <article class="customer">
       <section class="customer-datas">
         <table>
           <tr>
-            <th>ICH BUCHE ALS:</th>
+            <th>Meine Daten:</th>
           </tr>
           <tr>
             <td>
@@ -78,12 +78,15 @@
         <p>Derzeit nehmen wir nur Barzahlungen am Ort an</p>
       </section>
     </article>
-    <button id="btnToSaveToLocalStorage" @click="addToLocalStorage">
-      Kundendaten speichern
-    </button>
-    <br />
+
     <router-link to="/Confirm">
-      <button class="btnToPay">Up to pay!!!</button></router-link
+      <button
+        id="btnToSaveToLocalStorage"
+        @click="addToLocalStorage"
+        class="btnToPay"
+      >
+        Bestellung abschließen
+      </button></router-link
     >
   </article>
 </template>

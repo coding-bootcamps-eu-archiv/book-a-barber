@@ -11,7 +11,9 @@
       :service="service"
     />
   </main>
-  <router-link class="button" to="/Appointments">Zur Terminauswahl</router-link>
+  <router-link to="/Appointments"
+    ><button class="button">Zur Terminauswahl</button></router-link
+  >
 </template>
 
 <script>
@@ -24,8 +26,6 @@ export default {
     barberServices: data,
   }),
 };
-/*Methode() {
-let totalPrice = {{ bookindata.payment.sum }} + 19% */
 </script>
 
 <style>
@@ -43,9 +43,8 @@ body {
   --card-background-color: blanchedalmond;
   --buying-area-bg-color: lightslategray;
 }
-/* "Header" with Sticky-Styling */
+
 .page-services {
-  /* background-color: var(--header-color); */
   padding: 1rem 0;
   opacity: 0.75;
   position: sticky;
@@ -178,10 +177,13 @@ img {
 
 /* Button to the next episode */
 .button {
-  padding: 0.25rem;
+  background: var(--btn-background-clr);
+  border: var(--btn-border);
+  border-radius: 25px;
+  /* padding: 0.25rem;
   border: 2px solid var(--border-color);
   border-radius: 0.25rem;
   background-color: var(--body-background-color);
-  margin-bottom: 5rem;
+  margin-bottom: 5rem; */
 }
 </style>

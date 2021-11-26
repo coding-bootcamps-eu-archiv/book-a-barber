@@ -1,36 +1,38 @@
 <template>
-  <MultiStepHeader :step="3" />
-  <section>
-    <h1>Termin auswählen</h1>
-    <article class="appointments">
-      <table v-for="appointment in appointments" :key="appointment.day">
-        <tr>
-          <th class="days">{{ appointment.day }}</th>
-        </tr>
-        <tr
-          @click="chosenAppointment(slot)"
-          v-for="slot in appointment.slots"
-          :key="slot"
-        >
-          <td>
-            {{ slot.time }}
-          </td>
-        </tr>
-      </table>
-    </article>
+  <body>
+    <MultiStepHeader :step="3" />
+    <section>
+      <h1>Termin auswählen</h1>
+      <article class="timeSlots">
+        <table v-for="appointment in appointments" :key="appointment.day">
+          <tr>
+            <th class="days">{{ appointment.day }}</th>
+          </tr>
+          <tr
+            @click="chosenAppointment(slot)"
+            v-for="slot in appointment.slots"
+            :key="slot"
+          >
+            <td>
+              {{ slot.time }}
+            </td>
+          </tr>
+        </table>
+      </article>
 
-    <article>
-      <h3 id="chosen-appointment">
-        Dein ausgewählter Termin: {{ this.value }}
-      </h3>
-      <p id="show-chosen-appointment"></p>
-    </article>
-    <article>
-      <router-link to="/Payment"
-        ><button class="button-next-page">Termin buchen</button></router-link
-      >
-    </article>
-  </section>
+      <article>
+        <h3 id="chosen-appointment">
+          Dein ausgewählter Termin: {{ this.value }}
+        </h3>
+        <p id="show-chosen-appointment"></p>
+      </article>
+      <article>
+        <router-link to="/Payment"
+          ><button class="button-next-page">Termin buchen</button></router-link
+        >
+      </article>
+    </section>
+  </body>
 </template>
 
 <script>
@@ -58,12 +60,8 @@ export default {
 </script>
 
 <style>
-.appointments {
-  display: block;
-}
 body {
-  height: 30rem;
-
+  height: 50rem;
   width: 100%;
 }
 
@@ -83,11 +81,7 @@ tr {
 }
 
 .appointments {
-  display: flex;
-  justify-content: center;
   list-style: none;
-  display: flex;
-  justify-content: center;
 }
 
 .days {

@@ -73,8 +73,7 @@ export default {
   background-size: cover;
   margin: auto;
   width: 100%;
-  min-width: 100vw;
-  min-height: 60vw;
+  min-height: 50rem;
 }
 .firstPage {
   display: flex;
